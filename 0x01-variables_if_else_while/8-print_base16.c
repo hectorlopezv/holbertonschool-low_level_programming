@@ -16,7 +16,7 @@ putchar(i);
 }
 for (b = 'a'; b <= 'f'; b++)
 {
-putchar(i);
+putchar(b);
 }
 putchar('\n');
 return (0);
