@@ -8,9 +8,11 @@
  */
 int main(void)
 {
-for (int i = 97; i <= 122; i++)
+int a;
+for (a = 97; a <= 122; a++)
 {
-putchar(i);
+putchar(a);
 }
+putchar('\n');
 return (0);
 }
