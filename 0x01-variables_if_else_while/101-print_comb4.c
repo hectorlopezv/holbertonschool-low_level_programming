@@ -16,21 +16,29 @@ k = 0;
 p = 0;
 for (i = 0; i <= 9; i++)
 {
-for (j = i+1; j <= 9; j++){
+for (j = i + 1; j <= 9; j++)
+{
 
-for (p = j+1 ; p<= 9; p++){
+for (p = j + 1 ; p <= 9; p++)
+{
 
-if (j == k-1){continue;}
+if (j == k - 1)
+{
+continue;
+}
 putchar(i + '0');
 putchar(j + '0');
 putchar(p + '0');
-if (i == 7 && j == 8 && p ==9){continue;}
+if (i == 7 && j == 8 && p == 9)
+{
+continue;
+}
 putchar(',');
 putchar(' ');
 }
 
 }
-k+=1;
+k += 1;
 }
 putchar('\n');
 return (0);
