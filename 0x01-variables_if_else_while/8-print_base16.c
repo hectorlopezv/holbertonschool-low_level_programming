@@ -18,6 +18,6 @@ for (b = 'a'; b <= 'f'; b++)
 {
 putchar(i);
 }
-putchar(' ');
+putchar('\n');
 return (0);
 }
