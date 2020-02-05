@@ -21,6 +21,7 @@ if (i == '9' && j == '9')
 continue;
 }
 putchar(',');
+putchar(' ');
 }
 }
 putchar('\n');
