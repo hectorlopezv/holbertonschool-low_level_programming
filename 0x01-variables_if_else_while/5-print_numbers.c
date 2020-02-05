@@ -9,16 +9,11 @@
 int main(void)
 {
 int i;
-for (i = 'a'; i <= 'z'; i++)
+for (i = '0'; i <= '9'; i++)
 {
-if (i == 'q' || i == 'e')
-{
-continue;
-}
 putchar(i);
 }
 putchar('\n');
-/* your code goes there */
-	return (0);
+return (0);
 }
 
