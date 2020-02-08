@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- * main - writes the character c to stdout
+ * main - prints the sum of all multiples
+ * of 3 or 5 below 1024
  *
  * Return: 0
- * On error, -1 is returned, and errno is set appropriately.
  */
 
 int main(void)
@@ -21,9 +21,9 @@ c_15 = 68;
 int res_15;
 res_15 = 15;
 int total;
-sum_3 = 3 * 0.5 * i_3 *(i_3 + 1);
-sum_5 = 5 * 0.5 * b_5 *(b_5 + 1);
-res_15 = 15 * 0.5 * c_15 *(c_15 + 1);
+sum_3 = 3 * 0.5 * i_3 * (i_3 + 1);
+sum_5 = 5 * 0.5 * b_5 * (b_5 + 1);
+res_15 = 15 * 0.5 * c_15 * (c_15 + 1);
 total = sum_5 + sum_3 - res_15;
 printf("%d\n", total);
 return (0);
