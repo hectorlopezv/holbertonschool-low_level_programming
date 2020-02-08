@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * print_sign - writes the sign of a number
- * @n: integer value 
+ * @n: integer value
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
@@ -23,5 +23,4 @@ else
 _putchar('-');
 return (-1);
 }
-
 }
