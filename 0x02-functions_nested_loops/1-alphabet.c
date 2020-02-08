@@ -1,11 +1,7 @@
-
-#include <stdio.h>
 #include "holberton.h"
 
 /**
- *print_alphabet - uses the print_alphabet func
- *
- *Return: nothing
+ *finally....
  */
 
 void print_alphabet(void)
