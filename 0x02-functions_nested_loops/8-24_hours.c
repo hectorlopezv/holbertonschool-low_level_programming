@@ -1,10 +1,8 @@
 #include "holberton.h"
 /**
- * _jack_bauer - writes the character c to stdout
- *
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * _jack_baue00. to 23.59r - writes the character c to stdout
+ *00. to 23.59
+ * Return: nothing.
  */
 void jack_bauer(void)
 {
