@@ -2,7 +2,7 @@
 
 /**
  *_islower - prints if a number is positive
- *
+ *@c: the value to check
  *Return: 1 if is the alphabet
  * on error return 0
  */
