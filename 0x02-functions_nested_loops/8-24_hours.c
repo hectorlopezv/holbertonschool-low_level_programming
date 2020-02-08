@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _jack_baue00. to 23.59r - writes the character c to stdout
+ * jack_bauer - writes the character c to stdout
  *00. to 23.59
  * Return: nothing.
  */
