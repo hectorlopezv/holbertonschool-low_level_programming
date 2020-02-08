@@ -21,10 +21,10 @@ c_15 = 68;
 int res_15;
 res_15 = 15;
 int total;
-sum_3 =3 * 0.5 *i_3 *(i_3 + 1);
-sum_5 = 5 *0.5 *b_5 *(b_5 + 1);
+sum_3 = 3 * 0.5 * i_3 *(i_3 + 1);
+sum_5 = 5 * 0.5 * b_5 *(b_5 + 1);
 res_15 = 15 * 0.5 * c_15 *(c_15 + 1);
 total = sum_5 + sum_3 - res_15;
 printf("%d\n", total);
-return 0;
+return (0);
 }
