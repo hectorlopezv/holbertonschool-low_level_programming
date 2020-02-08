@@ -1,10 +1,11 @@
 #include "holberton.h"
 /**
- * print_sign - writes the sign of a number
- * @n: integer value
+ * print_sign - prints the sign of a number
+ * @n: number that is being checked
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: 1 and prints + if n is positive
+ * Returns 0 and prints 0 if n is zero
+ * Returns -1 and prints - if n is negative
  */
 int print_sign(int n)
 {
