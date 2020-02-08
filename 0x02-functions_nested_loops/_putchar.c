@@ -1,5 +1,5 @@
 #include <unistd.h>
-
+#include <stdio.h>
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
@@ -109,9 +109,127 @@ return (-1 * n);
 int print_last_digit(int n)
 {
 int c;
-c = (n<0) ? -1 : 1;
-_putchar((n % 10)*c + '0');
-return ((n % 10)*c);
+c = (n < 0) ? -1 : 1;
+_putchar((n % 10) * c + '0');
+return ((n % 10) * c);
 }
 
 
+void jack_bauer(void)
+{
+int i;
+int j;
+i = 0;
+j = 0;
+while (j <= 23)
+{
+while (i <= 59)
+{
+_putchar(j / 10 + '0');
+_putchar(j % 10 + '0');
+_putchar(':');
+_putchar(i / 10 + '0');
+_putchar(i % 10 + '0');
+_putchar('\n');
+i++;
+}
+
+i = 0;
+j++;
+
+}
+}
+
+
+void times_table(void)
+{
+int i;
+int n;
+int p;
+n = 0;
+i = 0;
+p = 0;
+while (i <= 9)
+{
+while (n <= 9)
+{
+p = i *n;
+if (p > 9)
+{
+_putchar(',');
+_putchar(' ');
+_putchar(p / 10 + '0');
+_putchar(p % 10 + '0');
+
+}
+else
+{
+if (n == 0)
+{
+_putchar(p + '0');
+}
+else
+{
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
+_putchar(p + '0');
+}
+}
+n++;
+}
+_putchar('\n');
+n = 0;
+i++;
+}
+}
+
+
+int add(int a, int b)
+{
+return (a + b);
+
+}
+
+
+void print_to_98(int n)
+{
+int c;
+c = (n > 98) ? 1 : 0;
+if (c)
+{
+while (n >= 98)
+{
+printf("%d", n);
+if (n == 98)
+
+{
+printf("\n");
+n--;
+continue;
+}
+printf("%c", ',');
+printf("%c", ' ');
+n--;
+}
+
+}
+else
+{
+while (n <= 98)
+{
+printf("%d", n);
+if (n == 98)
+{
+printf("\n");
+n++;
+continue;
+}
+printf("%c", ',');
+printf("%c", ' ');
+n++;
+}
+
+
+}
+}
