@@ -9,7 +9,7 @@
 int main(void)
 {
 int i_3;
-i_3 = 340 + 1;/*+1 comes from 1023*/
+i_3 = 340 + 1;
 int sum_3;
 sum_3 = 0;
 int b_5;
