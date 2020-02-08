@@ -1,19 +1,20 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
+ *_islower - prints if a number is positive
  *
- * Return: Always 0.
+ *Return: 1 if is the alphabet
+ * on error return 0
  */
-int main(void)
+int _islower(int c)
 {
-int r;
-r = _islower('H');
-_putchar(r + '0');
-r = _islower('o');
-_putchar(r + '0');
-r = _islower(108);
-_putchar(r + '0');
-_putchar('\n');
+if (c >= 'a' && c <= 'z')
+{
+return (1);
+}
+else
+{
 return (0);
+}
+
 }
