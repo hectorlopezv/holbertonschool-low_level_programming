@@ -1,6 +1,12 @@
 #include <stdio.h>
+/**
+ * main - writes the character c to stdout
+ *
+ * Return: 0
+ * On error, -1 is returned, and errno is set appropriately.
+ */
 
-int main()
+int main(void)
 {
 int i_3;
 i_3 = 340 + 1;/*+1 comes from 1023*/
