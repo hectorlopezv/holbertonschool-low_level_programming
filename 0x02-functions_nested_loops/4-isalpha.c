@@ -1,22 +1,49 @@
 #include "holberton.h"
+/**
+ * _isalpha - checks for upper and lower case
+ * @c: The character to check
+ *
+ * Return: On success 1.
+ * O otherwise
+ */
+
+int _isalpha(int c)
+{
+if (_islower(c) == 1)
+{
+return (1);
+
+}
+else if (c >= 'A' && c <= 'Z')
+{
+
+return (1);
+
+}
+else
+{
+return (0);
+}
+
+}
 
 /**
- * main - check the code for Holberton School students.
+ * _islower - writes the character c to stdout
+ * @c: The character to print
  *
- * Return: Always 0.
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-int main(void)
-{
-int r;
 
-r = _isalpha('H');
-_putchar(r + '0');
-r = _isalpha('o');
-_putchar(r + '0');
-r = _isalpha(108);
-_putchar(r + '0');
-r = _isalpha(';');
-_putchar(r + '0');
-_putchar('\n');
+int _islower(int c)
+{
+if (c >= 'a' && c <= 'z')
+{
+return (1);
+}
+else
+{
 return (0);
+}
+
 }
