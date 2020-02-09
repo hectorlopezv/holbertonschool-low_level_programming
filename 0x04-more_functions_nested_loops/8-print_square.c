@@ -6,6 +6,7 @@
  *@size: character value
  * Return: Always 1 if uppercase 0 otherwise
  */
+
 void print_square(int size)
 {
 	int num_squares, num_lines;
@@ -31,3 +32,4 @@ void print_square(int size)
 
 	}
 }
+
