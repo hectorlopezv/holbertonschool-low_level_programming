@@ -1,75 +1,62 @@
-#include "holberton.h"
 #include <stdio.h>
+#include "holberton.h"
 /**
- * print_times_table - writes the character c to stdout
- * @n: The character to print
+ *main - print fibo
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ *Return: 0
  */
+
 void print_times_table(int n)
 {
-int i;
-int j;
-int p;
-int on;
-int te;
-int hu;
-j = 0;
-i = 0;
-p = 0;
-if (n>=0 && n<=15){
-while (i <= n)
+int row;
+int col;
+int units;
+int tens;
+int product;
+int hund;
+if (n <= 15 && n >= 0)
 {
-while (j <= n)
+for (row = 0; row <= n; row++)
 {
-p = i *j;
-on = p % 10;
-te = p / 10 % 10;
-hu = p / 100;
-
-if (j!=0 && hu==0)
+for (col = 0; col <= n; col++)
 {
-/*caso de 10*/
-_putchar(',');
-if (te ==0)
+product = row * col;
+units = (product % 10);
+tens = (product / 10);
+if (product > 9 && col <= n && product <= 99)
 {
-/*we are verifyin if is n is 0-9 and print on */
-_putchar(' ');
-}else
-{
-/* 10-99 case */
-_putchar(' ');
-_putchar(te + '0');
-_putchar(on + '0');
-}
-
-
-
-}else if (hu !=0)
-{
-
-_putchar(hu +'0');
-_putchar(te + '0');
-_putchar(on + '0');
-
-}
-
-if (j ==0){_putchar('0');}
-if (j !=n){
 _putchar(',');
 _putchar(' ');
+_putchar(' ');
+_putchar(tens + '0');
+_putchar(units + '0');
+}
+else if (product == 0 && col == 0)
+{
+_putchar(units + '0');
+}
+else if (product <= 9 && col >= 1)
+{
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
+_putchar(' ');
+_putchar(units + '0');
+}
+else if (product > 99 && col <= n)
+{
+_putchar(',');
+_putchar(' ');
+units = (product % 10);
+tens = product / 10 % 10;
+hund = (product / 100);
+_putchar(hund + '0');
+_putchar(tens + '0');
+_putchar(units + '0');
 }
 }
-i++;
-j=0;
-_putchar('n');
-
-
+_putchar('\n');
+}
+}
 }
 
-
-
-}
-/*ends here*/
-}
