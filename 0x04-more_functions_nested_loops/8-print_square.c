@@ -1,20 +1,21 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
- *
+ * print_square - check  for Holberton School students.
+ *@size: size of hector
  * Return: Always 0.
  */
 void print_square(int size)
 {
 	int a;
 	int b;
+
 	if (size > 0)
 	{
-		for (a = 0;a < size; a++)
+		i	for (a = 0; a < size; a++)
 
 		{
-			for (b = 0;b < size; b++)
+			for (b = 0; b < size; b++)
 
 			{
 
@@ -29,7 +30,8 @@ void print_square(int size)
 
 
 
-	} else {
+	} else
+	{
 
 		_putchar('\n');
 
