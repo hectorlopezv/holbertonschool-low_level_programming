@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include "holberton.h"
+
 /**
- *main - print fibo
+ *print_times_table - print fibo
  *
  *Return: 0
  */
@@ -59,4 +59,5 @@ _putchar('\n');
 }
 }
 }
+
 
