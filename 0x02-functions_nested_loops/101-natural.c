@@ -1,12 +1,11 @@
 #include <stdio.h>
-#include "holberton.h"
+
 /**
  * main - prints the sum of all multiples
  * of 3 or 5 below 1024
  *
  * Return: 0
  */
-
 int main(void)
 {
 int i_3, b_5, c_15, sum_3, sum_5, res_15, total;
