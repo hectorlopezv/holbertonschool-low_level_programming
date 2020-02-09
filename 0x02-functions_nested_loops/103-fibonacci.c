@@ -1,23 +1,39 @@
 #include <stdio.h>
-#include <gmp.h>
-int main(void){
-int n_0=1;
-int n_1=2;
-int next_term;
-for (int i=1;i<=98;i++){
+#include "holberton.h"
 
-printf("%d, ",n_0);
-next_term=n_0+n_1;
-n_0=n_1;
-n_1=next_term;
-mpz_t n1,n0,next_termito;
+/**
+ * main  - fibonacci n=50
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int main(void)
+{
 
-mpz_init(n1,n0,next_termito);
-mpz_set_ui(n1,0);
-mpz_set_ui(n0,0);
-mpz_set_ui(next_termito,0);
-mpz_add(
+long i;
+long a;
+long b;
+long r;
+long sum;
+
+a = 0;
+b = 1;
+r = 0;
+sum = 0;
+
+for (i = 0;i <= 36;i++)
+{
+
+r = a + b;
+if (r %2==0)
+{
+sum+=r;
 
 }
+a = b;
+b = r;
+}
+printf("%lu\n",sum);
 return (0);
 }
+
