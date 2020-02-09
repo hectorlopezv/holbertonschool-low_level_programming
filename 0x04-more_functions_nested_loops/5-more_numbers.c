@@ -13,10 +13,10 @@ void more_numbers(void)
 	int b;
 
 	char *p = "01234567891011121314";
-	for (b = 0; b <10 ; b++)
-	{
 
-		for (i = 0; i<20; i++)
+	for (b = 0; b < 10; b++)
+	{
+		for (i = 0; i < 20; i++)
 		{
 			_putchar(*(p + i));
 
