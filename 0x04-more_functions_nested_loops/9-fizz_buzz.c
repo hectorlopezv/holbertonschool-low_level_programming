@@ -25,6 +25,7 @@ void print_fizz(void)
 
 
 				printf("Buzz");
+				printf("\n");
 			} else
 			{
 				printf("Buzz ");
@@ -41,11 +42,6 @@ void print_fizz(void)
 		{
 			printf("%d ", i);
 
-
-		}
-		if (i == 100)
-		{
-			printf("\n");
 
 		}
 	}
