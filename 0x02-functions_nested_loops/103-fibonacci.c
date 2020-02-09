@@ -21,19 +21,19 @@ b = 1;
 r = 0;
 sum = 0;
 
-for (i = 0;i <= 36;i++)
+for (i = 0 ; i <= 36 ; i++)
 {
 
 r = a + b;
-if (r %2==0)
+if (r % 2 == 0)
 {
-sum+=r;
+sum += r;
 
 }
 a = b;
 b = r;
 }
-printf("%lu\n",sum);
+printf("%lu\n", sum);
 return (0);
 }
 
