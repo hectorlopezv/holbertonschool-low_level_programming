@@ -15,16 +15,16 @@ void print_fizz(void)
 
 		if (i % 5 == 0 && i % 3 == 0)
 		{
-			printf("FizzBuzz\t");
+			printf("FizzBuzz ");
 
 		} else if (i % 5 == 0)
 		{
-			printf("Buzz\t ");
+			printf("Buzz ");
 
 
 		} else if (i % 3 == 0)
 		{
-			printf("Fizz\t ");
+			printf("Fizz ");
 
 
 		} else
