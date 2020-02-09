@@ -37,7 +37,7 @@ void print_triangle(int size)
 			b = temp;
 
 		}
-
+		_putchar('\n');
 	}
 
 }
