@@ -2,19 +2,14 @@
 
 /**
  *print_times_table - print fibo
- *
+ *@n: number of times
  *Return: 0
  */
 
 void print_times_table(int n)
 {
-int row;
-int col;
-int units;
-int tens;
-int product;
-int hund;
-if (n < 15 && n > 0)
+int row, col, units, tens, product, hund;
+if (n <= 15 && n >= 0)
 {
 for (row = 0; row <= n; row++)
 {
