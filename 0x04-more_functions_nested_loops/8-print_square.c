@@ -1,35 +1,38 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
- * print_square - this is the description os
- *@size: character value
- * Return: Always 1 if uppercase 0 otherwise
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
  */
-
 void print_square(int size)
 {
-	int num_squares, num_lines;
-
-	num_lines = size;
-	num_squares = size;
-
-	if (size <= 0)
+	int a;
+	int b;
+	if (size > 0)
 	{
-		putchar('\n');
+		for (a = 0;a < size; a++)
 
-	} else
-	{
-		while (num_lines--)
 		{
-			while (num_squares--)
+			for (b = 0;b < size; b++)
+
 			{
-				putchar('#');
+
+				_putchar('#');
+
+
 			}
-			num_squares = size;
-			putchar('\n');
+			_putchar('\n');
+
+
 		}
+
+
+
+	} else {
+
+		_putchar('\n');
+
 
 	}
 }
-
