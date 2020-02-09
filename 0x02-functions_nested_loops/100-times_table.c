@@ -14,7 +14,7 @@ int units;
 int tens;
 int product;
 int hund;
-if (n <= 15 && n >= 0)
+if (n < 15 && n > 0)
 {
 for (row = 0; row <= n; row++)
 {
