@@ -1,4 +1,14 @@
 #include <stdio.h>
+<<<<<<< HEAD
+=======
+/**
+ * main  - fibonacci n=50
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+
+>>>>>>> 0781df2a42109fe7cfcf1901cf45e0f39a01517a
 int main(void)
 {
 long  n_0=1;
