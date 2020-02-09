@@ -19,15 +19,13 @@ void print_square(int size)
 
 	} else
 	{
-		while (num_lines --)
+		while (num_lines--)
 		{
-			while( num_squares --)
+			while (num_squares--)
 			{
 				putchar('#');
-
-
 			}
-			num_squares= size;
+			num_squares = size;
 			putchar('\n');
 		}
 

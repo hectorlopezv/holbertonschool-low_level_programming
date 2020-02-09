@@ -2,39 +2,26 @@
 #include "holberton.h"
 
 /**
- * more_numbers - this is the description os
+ * more_numbers - this is the ription os
  *
  * Return: Always 1 if uppercase 0 otherwise
  */
 
 void more_numbers(void)
 {
-	int a;
+	int i;
 	int b;
 
-	a = 0;
-	b = 0;
-	while (b <= 9)
+	char *p = "01234567891011121314";
+	for (b = 0; b <10 ; b++)
 	{
-		while (a <= 14)
+
+		for (i = 0; i<20; i++)
 		{
-			if (a >= 0 && a <= 9)
-			{
-				_putchar(a + '0');
+			_putchar(*(p + i));
 
-			} else
-
-			{
-				_putchar(a / 10  + '0');
-				_putchar(a % 10 + '0');
-
-			}
-			a++;
 		}
 		_putchar('\n');
-		b++;
-		a = 0;
 
 	}
-
 }
