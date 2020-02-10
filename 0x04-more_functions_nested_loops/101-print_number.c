@@ -28,8 +28,8 @@ void print_number(int n)
 	else if (n < 0)
 	{
 		_putchar(45);
-		n *= -1
-			i = sacar_digitos(n);
+		n *= -1;
+		i = sacar_digitos(n);
 		o = i - 1;
 		for (h = 0; h < i; h++)
 		{
