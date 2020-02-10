@@ -10,8 +10,7 @@ int sacar_divisor(int n);
 
 void print_number(int n)
 {
-	unsigned int i, h, o, d;
-
+	int i, h, o, d;
 
 	if (n > 0)
 	{
