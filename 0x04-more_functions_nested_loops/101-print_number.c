@@ -24,31 +24,17 @@ void print_number(int n)
 			n = n % d;
 			o--;
 		}
+
 	}
 	else if (n < 0)
 	{
 		_putchar(45);
-		n *= -1;
 		i = sacar_digitos(n);
 		o = i - 1;
 		for (h = 0; h < i; h++)
 		{
 			d = sacar_divisor(o);
-			_putchar(n / d + '0');
-			n = n % d;
-			o--;
-		}
-	}
-	else if (n < 0)
-	{
-		_putchar(45);
-		n *= -1;
-		i = sacar_digitos(n);
-		o = i - 1;
-		for (h = 0; h < i; h++)
-		{
-			d = sacar_divisor(o);
-			_putchar(n / d + '0');
+			_putchar(((n / d) * -1) + '0');
 			n = n % d;
 			o--;
 		}
@@ -60,6 +46,7 @@ void print_number(int n)
 	}
 }
 
+
 /**
  * sacar_digitos - check the code for Holberton School students.
  *@n: hello
@@ -69,11 +56,26 @@ int sacar_digitos(int n)
 {
 	int count = 0;
 
-	while (n > 0)
+	if (n < 0)
+
 	{
-		n = n / 10;
-		count++;
+		while (n < 0)
+		{
+			n = n / 10;
+			count++;
+		}
+	} else
+
+	{
+
+		while (n > 0)
+		{
+			n = n / 10;
+			count++;
+		}
+
 	}
+
 
 	return (count);
 }
@@ -85,11 +87,17 @@ int sacar_digitos(int n)
  */
 int sacar_divisor(int n)
 {
-	int divisor, pe;
+	int divisor;
+
+	if (n < 0)
+	{
+		n = n * -1;
+
+	}
 
 	divisor = 1;
-	pe = n;
-	for (; pe > 0; pe--)
+
+	for (; n != 0; n--)
 	{
 		divisor *= 10;
 	}
