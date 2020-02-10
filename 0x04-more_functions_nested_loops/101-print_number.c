@@ -24,13 +24,26 @@ void print_number(int n)
 			n = n % d;
 			o--;
 		}
-
 	}
 	else if (n < 0)
 	{
 		_putchar(45);
 		n *= -1
 			i = sacar_digitos(n);
+		o = i - 1;
+		for (h = 0; h < i; h++)
+		{
+			d = sacar_divisor(o);
+			_putchar(n / d + '0');
+			n = n % d;
+			o--;
+		}
+	}
+	else if (n < 0)
+	{
+		_putchar(45);
+		n *= -1;
+		i = sacar_digitos(n);
 		o = i - 1;
 		for (h = 0; h < i; h++)
 		{
@@ -83,4 +96,3 @@ int sacar_divisor(int n)
 
 	return (divisor);
 }
-
