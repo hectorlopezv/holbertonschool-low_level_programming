@@ -9,18 +9,16 @@
 
 int main(void)
 {
-	int i, a, b, sum;
+	int i_3, b_5, c_15, sum_3, sum_5, res_15, total;
 
-	sum = 0;
-	for (i = 0; i < 1024; i++)
-	{
-		a = i % 3;
-		b = i % 5;
-		if (a == 0 || b == 0)
-		{
-			sum = sum + i;
-		}
-	}
-	printf("%d\n", sum);
+	i_3 = 341;
+	b_5 = 204;
+	c_15 = 68;
+	res_15 = 15;
+	sum_3 = 3 * 0.5 * i_3 * (i_3 + 1);
+	sum_5 = 5 * 0.5 * b_5 * (b_5 + 1);
+	res_15 = 15 * 0.5 * c_15 * (c_15 + 1);
+	total = sum_5 + sum_3 - res_15;
+	printf("%d\n", total);
 	return (0);
 }
