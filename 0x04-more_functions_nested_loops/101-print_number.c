@@ -1,86 +1,44 @@
 #include "holberton.h"
 /**
- * print_number - check the code for Holberton School students.
- *@n: hello
- * Return: Always 0.
+ * print_number - function to print integers
+ *
+ * @n: int type
+ * Return: return integer values
  */
-
-int sacar_digitos(int n);
-int sacar_divisor(int n);
 
 void print_number(int n)
 {
-	int i, h, o, d;
+	int a, remainder, length, count;
+	int m = n;
+	int pcounter = 0;
+	int power;
 
-	if (n > 0)
-	{
-
-		i = sacar_digitos(n);
-		o = i - 1;
-		for (h = 0; h < i; h++)
-		{
-			d = sacar_divisor(o);
-			_putchar(n / d + '0');
-			n = n % d;
-			o--;
-		}
-
-	}
-	else if (n < 0)
-	{
-		_putchar(45);
-		n *= -1;
-		i = sacar_digitos(n);
-		o = i - 1;
-		for (h = 0; h < i; h++)
-		{
-			d = sacar_divisor(o);
-			_putchar(n / d + '0');
-			n = n % d;
-			o--;
-		}
-
-	} else if (n == 0)
+	if (n == 0)
 	{
 		_putchar('0');
-		return;
 	}
-}
-
-/**
- * sacar_digitos - check the code for Holberton School students.
- *@n: hello
- * Return: Always 0.
- */
-int sacar_digitos(int n)
-{
-	int count = 0;
-
-	while (n > 0)
+	if (n < 0)
 	{
-		n = n / 10;
-		count++;
+		_putchar('-');
 	}
-
-	return (count);
-}
-
-/**
- * sacar_divisor - check the code for Holberton School students.
- *@n: hello
- * Return: Always 0.
- */
-int sacar_divisor(int n)
-{
-	int divisor, pe;
-
-	divisor = 1;
-	pe = n;
-	for (; pe > 0; pe--)
+	for (length = 0; n != 0; length++)
 	{
-		divisor *= 10;
+		n /= 10;
 	}
-
-	return (divisor);
+	for (power = 1; pcounter < (length - 1); pcounter++)
+	{
+		power *= 10;
+	}
+	for (count = 0; count < length; count++)
+	{
+		a = m;
+		if (m < 0)
+			_putchar(((m / power) * -1) + '0');
+		else
+			_putchar((m / power) + '0');
+		remainder = a % power;
+		power /= 10;
+		m = remainder;
+	}
 }
 
