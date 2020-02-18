@@ -9,8 +9,8 @@
 
 void puts_half(char *s)
 {	/*Guard conditions*/
-	if ( s == NULL)
-	{
+	if (s == NULL)
+	{ /* missing the S[0] == '0' --> Empty condition..betty>*/
 		return;
 	}
 	else

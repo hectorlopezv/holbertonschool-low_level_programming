@@ -8,7 +8,7 @@
 int main(void)
 {
 	char *str;
-	str = "123";
+	str = "";
 
 
 	puts_half(str);
