@@ -5,6 +5,7 @@
  *@str: string character
  * Return: Always 0.
  */
+
 void puts2(char *str)
 {
 	while (*str != '\0')
