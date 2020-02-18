@@ -8,23 +8,25 @@
 
 void puts_half(char *str)
 {
-	int lenght, i;
+	int lenght;
 
 	lenght = _strlen(str);
 
 	if (lenght % 2 ==  0)/* even*/
 	{
 		lenght = lenght / 2;
+
 	} else if (lenght % 2 != 0)/* odd*/
 	{
 		lenght = (lenght - 1) / 2;
 	}
+
 	str += lenght;
-	for (i = lenght; i < lenght * 2; i++, str++)
+
+	while( *str != '\0' )
 	{
-
 		_putchar(*str);
-
+		str++;
 
 	}
 	_putchar('\n');
@@ -41,10 +43,10 @@ void puts_half(char *str)
 
 int _strlen(char *s)
 {
-
 	int count;
 
 	count = 0;
+
 	while (*s != '\0')
 	{
 		s++;/* moving the pointer one index*/
