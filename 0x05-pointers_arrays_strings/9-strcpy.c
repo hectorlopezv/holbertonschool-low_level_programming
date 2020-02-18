@@ -17,9 +17,8 @@ char *_strcpy(char *dest, char *src)
 	contador = 0;
 
 	while (*src != '\0')
-
 	{
-		dest[contador] = *src ;
+		dest[contador] = *src;
 		src++;
 		contador++;
 	}

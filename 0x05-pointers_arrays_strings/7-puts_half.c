@@ -30,6 +30,15 @@ void puts_half(char *str)
 	_putchar('\n');
 }
 
+
+
+/**
+ * _strlen - check the code for Holberton School students.
+ *@s: string variable
+ * Return: Always 0.
+ */
+
+
 int _strlen(char *s)
 {
 
