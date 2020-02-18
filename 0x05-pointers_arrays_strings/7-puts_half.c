@@ -23,7 +23,7 @@ void puts_half(char *str)
 
 
 
-	for(;largo<lenght;largo++)
+	for(;largo<=lenght;largo++)
 	{
 		_putchar(str[largo]);
 
@@ -52,6 +52,6 @@ int _strlen(char *s)
 		i++;/* moving the pointer one index*/
 		count++;
 	}
-	count--;
+
 	return (count);
 }
