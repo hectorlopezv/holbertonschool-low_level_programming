@@ -8,12 +8,30 @@
 
 void puts2(char *str)
 {
-	while (*str != '\0')
+	int contador;
+
+	contador = 1;
+
+	for (; ;)
 	{
-		_putchar(*str);
-		str += 2;
+		if (contador % 2 == 0)
+		{	contador++;
+			str++;
+			continue;
+
+		} else
+		{
+			_putchar(*str);
+			contador++;
+			str++;
+		}
+
+		if (*str == '\0')
+		{
+			break;
+		}
 
 	}
-	_putchar('\n');
 
+	_putchar('\n');
 }
