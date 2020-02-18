@@ -2,53 +2,50 @@
 
 /**
  * rev_string - check the code for Holberton School students.
- *@s: string
+ *@str: string character
  * Return: Always 0.
  */
 
-void rev_string(char *s)
+void rev_string(char *str)
 {
+	int b, c;
+	int length = _strlen(str);
 
-	int number_spaces;
-
-	number_spaces = _strlen(s);
-	char s2[number_spaces + 1];
-
-	int b;
-	int a;
+	char temp;
 
 	b = 0;
-	a = 0;
+	c = length;
 
-	for (; b < number_spaces; b++)
+	/*swappp*/
+	while (c >= b)
 	{
-		s2[b] = s[b];
+		temp = str[b];
+		str[b] = str[c];
+		str[c] = temp;
+		c--;
+		b++;
 	}
-	b -= 1;
-	for (; a < number_spaces; a++)
-	{
-		s[a] = s2[b];
-		b--;
-	}
-
 }
 
 /**
  * _strlen - check the code for Holberton School students.
- *@s: string
+ *@s: string variable
  * Return: Always 0.
  */
 
 int _strlen(char *s)
 {
+	int counter = 0;
 
-	int count;
+	int i;
 
-	count = 0;
-	while (*s != '\0')
+	i = 0;
+
+	while (s[i] != '\0')
 	{
-		s++;/* moving the pointer one index*/
-		count++;
+		counter++;
+		i++;
 	}
-	return (count);
+	counter--;
+	return (counter);
 }
