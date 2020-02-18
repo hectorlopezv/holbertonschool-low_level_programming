@@ -23,7 +23,7 @@ void puts_half(char *str)
 
 	str += lenght;
 
-	while(*str != '\0')
+	while (*str != '\0')
 	{
 		_putchar(*str);
 		str++;
@@ -43,14 +43,16 @@ void puts_half(char *str)
 
 int _strlen(char *s)
 {
-	int count;
+	int count, i;
 
 	count = 0;
+	i = 0;
 
-	while (*s != '\0')
+	while (s[i] != '\0')
 	{
-		s++;/* moving the pointer one index*/
+		i++;/* moving the pointer one index*/
 		count++;
 	}
+	count--;
 	return (count);
 }
