@@ -13,7 +13,9 @@ void rev_string(char *s)
 
 	number_spaces = _strlen(s);
 	char s2[number_spaces + 1];
-	int b, a;
+
+	int b;
+	int a;
 
 	b = 0;
 	a = 0;
