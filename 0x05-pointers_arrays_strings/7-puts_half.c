@@ -16,12 +16,15 @@ void puts_half(char *s)
 	{
 		return;
 
-	}
-	for (; s[c] != '\0'; c++)
-	{
-		_putchar(s[c]);
-	}
+	} else
 
+	{
+		for (; s[c] != '\0'; c++)
+		{
+			_putchar(s[c]);
+		}
+
+	}
 	/*
 	 * for(;largo<=lenght;largo++)
 	 * {
