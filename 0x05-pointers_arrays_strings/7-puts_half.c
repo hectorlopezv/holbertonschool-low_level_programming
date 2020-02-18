@@ -12,6 +12,11 @@ void puts_half(char *s)
 	lenght = _strlen(s);
 	c = (lenght % 2 == 0) ? lenght / 2 : (lenght - 1) / 2;
 
+	if (s[0] == '\0')
+	{
+		return;
+
+	}
 	for (; s[c] != '\0'; c++)
 	{
 		_putchar(s[c]);
