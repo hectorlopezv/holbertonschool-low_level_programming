@@ -1,44 +1,42 @@
 #include "holberton.h"
-
 /**
  * puts_half - check the code for Holberton School students.
  *@str: string variable
  * Return: Always 0.
  */
 
-void puts_half(char *str)
+void puts_half(char *s)
 {
-	int lenght, largo;
-
-	lenght = _strlen(str);
-
-	if (lenght % 2 ==  0)/* even*/
+	int lenght, largo, c;
+	lenght = _strlen(s);
+	c = (lenght % 2 == 0) ? lenght / 2 : (lenght - 1) / 2;
+	printf("%d",c);
+	c = c + 1;
+	for (c; s[c] != '\0'; c++)
 	{
-		largo = lenght / 2;
-
-	} else if (lenght % 2 != 0)/* odd*/
-	{
-		largo = (lenght - 1) / 2;
+		_putchar(s[c]);
 	}
+	/*
+	 * 	for(;largo<=lenght;largo++)
+	 * 		{
+	 * 				_putchar(str[largo]);
+	 *
+	 * 					}
+	 * 						*/
 
-
-
-	for(;largo<=lenght;largo++)
-	{
-		_putchar(str[largo]);
-
-	}
+	/*while (s[i] != '\0')
+	 * 	{
+	 * 			counter++;
+	 * 					i++;
+	 * 						}*/
 	_putchar('\n');
 }
-
-
 
 /**
  * _strlen - check the code for Holberton School students.
  *@s: string variable
  * Return: Always 0.
  */
-
 
 int _strlen(char *s)
 {
