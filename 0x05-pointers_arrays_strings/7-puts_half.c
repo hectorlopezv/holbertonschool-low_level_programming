@@ -9,12 +9,9 @@
 void puts_half(char *s)
 {
 
-	if (s == NULL)
-	{
-		return;
-	}
 
 	int lenght, c;
+
 	lenght = _strlen(s);
 	c = (lenght % 2 == 0) ? lenght / 2 : (lenght - 1) / 2;
 
