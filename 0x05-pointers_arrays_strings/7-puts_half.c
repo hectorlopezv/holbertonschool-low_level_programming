@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stddef.h>
 /**
  * puts_half - check the code for Holberton School students.
  *@s: string variable
@@ -12,19 +13,14 @@ void puts_half(char *s)
 	lenght = _strlen(s);
 	c = (lenght % 2 == 0) ? lenght / 2 : (lenght - 1) / 2;
 
-	if (s[0] == '\0')
-	{
-		return;
-
-	} else
-
+	if (s[0] != '\0' || s != NULL)
 	{
 		for (; s[c] != '\0'; c++)
 		{
 			_putchar(s[c]);
 		}
-
 	}
+
 	/*
 	 * for(;largo<=lenght;largo++)
 	 * {
