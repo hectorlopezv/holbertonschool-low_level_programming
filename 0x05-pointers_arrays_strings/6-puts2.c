@@ -14,6 +14,12 @@ void puts2(char *str)
 
 	for (; ;)
 	{
+
+		if (*str == '\0')
+		{
+			break;
+		}
+
 		if (contador % 2 == 0)
 		{	contador++;
 			str++;
@@ -26,10 +32,6 @@ void puts2(char *str)
 			str++;
 		}
 
-		if (*str == '\0')
-		{
-			break;
-		}
 
 	}
 
