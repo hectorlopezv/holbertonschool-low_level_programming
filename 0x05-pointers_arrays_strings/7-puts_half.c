@@ -16,24 +16,20 @@ void puts_half(char *s)
 	else
 	{
 
-		int c, a;
+		int i;
 
-		for (a = 0; s[a] != '\0'; a++)
+		for (i = 0; s[i] != '\0'; i++)
 		{
 			/*CONTADOR*/
 		}
-		if (a == 1)
-		{
-			_putchar(s[0]);
-			_putchar('\n');
-			return;
-		}
+		i++;/* for the 0 case*/
 
-		c = (a % 2 == 0) ? a / 2 : (a + 1) / 2;
+		/* passes test case 0 ,123 ,0123456789,01234567898,empty,NULL*/
+		/* 5/2==2 */
 
-		for (; s[c] != '\0'; c++)
+		for (i /= 2; s[i] != '\0'; i++)
 		{
-			_putchar(s[c]);
+			_putchar(s[i]);
 		}
 		_putchar('\n');
 
