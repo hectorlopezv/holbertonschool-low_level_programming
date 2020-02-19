@@ -15,6 +15,7 @@ int _strcmp(char *s1, char *s2)
 
 	sum_s1 = 0;
 	sum_s2 = 0;
+	condition = 0;
 	/* uppercase sum 2*/
 	/* lowercase sum 1*/
 
