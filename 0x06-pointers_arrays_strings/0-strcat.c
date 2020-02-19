@@ -1,11 +1,14 @@
 #include "holberton.h"
+#include <stdio.h>
+
+#include "holberton.h"
 
 /**
- * _strcat - concatenate strings
- *@desitny: desitny string
- *@source: source string
- *Return: a string == pointer
- */
+ *  * _strcat - concatenate strings
+ *   *@desitny: desitny string
+ *    *@source: source string
+ *     *Return: a string == pointer
+ *      */
 
 char *_strcat(char *desitny, char *source)
 {
@@ -16,14 +19,13 @@ char *_strcat(char *desitny, char *source)
 	{
 		/* count size of dest including null*/
 	}
-	size++;
 
 	for (size_source = 0; source[size_source] != '\0'; size_source++)
 	{
 		desitny[size + size_source] = source[size_source];
 	}
 
-	source[size_source + size] = '\0';/* add null character*/
+	desitny[size_source + size] = '\0';/* add null character*/
 	return (desitny);
 
 }
