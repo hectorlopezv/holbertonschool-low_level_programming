@@ -30,11 +30,13 @@ int _atoi(char *s)
 		}
 		if (s[i] == '-')
 		{
-			if (s[i + 1] > '1' && s[i + 1] < '9')
+			if (s[i + 1] > '1' || s[i +1] < '9')
 			{
-				n *= -1;
+				n *= -1;;
 			}
 		}
+
+
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			contador++;
@@ -42,7 +44,9 @@ int _atoi(char *s)
 			str = (str * 10) + y;
 		}
 	}
+
 	c = (contador > 0) ? str * n : 0;
+
 	return (c);
 
 }
