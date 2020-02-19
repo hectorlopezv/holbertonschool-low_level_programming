@@ -11,7 +11,6 @@
 int main(void)
 
 {
-	int num;
 
 	srand(time(0));
 	/*random number between a range*/
