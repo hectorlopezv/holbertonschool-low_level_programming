@@ -15,10 +15,6 @@ int _atoi(char *s)
 	n = 1;
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == '-')
-		{
-			n *= -1;
-		}
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			y = s[i] - '0';
@@ -28,6 +24,11 @@ int _atoi(char *s)
 				break;
 			}
 		}
+		if (s[i] == '-')
+		{
+			n *= -1;
+		}
+
 	}
 
 	return (str * n);
