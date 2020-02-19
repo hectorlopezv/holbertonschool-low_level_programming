@@ -16,6 +16,7 @@ char *_strcat(char *desitny, char *source)
 	{
 		/* count size of dest including null*/
 	}
+	size++;
 
 	for (size_source = 0; source[size_source] != '\0'; size_source++)
 	{
