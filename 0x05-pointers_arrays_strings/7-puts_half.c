@@ -9,7 +9,7 @@
 
 void puts_half(char *s)
 {	/*Guard conditions*/
-	if (s[0] == '\0' || s == NULL)
+	if ( s == NULL)
 	{
 		return;
 	}
