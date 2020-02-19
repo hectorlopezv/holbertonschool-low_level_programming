@@ -19,12 +19,9 @@ int _atoi(char *s)
 
 	for (i = 0 ; s[i] != '\0'; i++)
 	{
-		if ((contador > 0) &( s[i + 1] == ' ') )
+		if ((contador > 0) &( s[i] == ' ') )
 		{ /* break space*/
-			contador++;
-			y = s[i] - '0';
-			str = (str * 10) + y;
-
+			str = str;
 			break;
 		}
 
