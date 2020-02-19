@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- *  * rot13 - caesers cipher
- *   * @s: pointer to an array of words
- *    *
- *     * Return: s
- *      */
+ * rot13 - caesers cipher
+ * @s: pointer to an array of words
+ *
+ * Return: s
+ */
 
 char *rot13(char *s)
 {
