@@ -4,11 +4,11 @@
 #include "holberton.h"
 
 /**
- *  * _strcat - concatenate strings
- *   *@desitny: desitny string
- *    *@source: source string
- *     *Return: a string == pointer
- *      */
+ * _strcat - concatenate strings
+ *@desitny: desitny string
+ *@source: source string
+ *Return: a string == pointer
+ */
 
 char *_strcat(char *desitny, char *source)
 {
