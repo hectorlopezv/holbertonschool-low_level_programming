@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
- *  * print_number - check the code for Holberton School students.
- *   *@n: hello
- *    * Return: Always 0.
- *     */
+ * print_number - check the code for Holberton School students.
+ *@n: hello
+ * Return: Always 0.
+ */
 
 int sacar_digitos(int n);
 int sacar_divisor(int n);
@@ -48,10 +48,10 @@ void print_number(int n)
 
 
 /**
- *  * sacar_digitos - check the code for Holberton School students.
- *   *@n: hello
- *    * Return: Always 0.
- *     */
+ * sacar_digitos - check the code for Holberton School students.
+ *@n: hello
+ * Return: Always 0.
+ */
 int sacar_digitos(int n)
 {
 	int count = 0;
@@ -81,10 +81,11 @@ int sacar_digitos(int n)
 }
 
 /**
- *  * sacar_divisor - check the code for Holberton School students.
- *   *@n: hello
- *    * Return: Always 0.
- *     */
+ * sacar_divisor - check the code for Holberton School students.
+ *@n: hello
+ * Return: Always 0.
+ */
+
 int sacar_divisor(int n)
 {
 	int divisor;

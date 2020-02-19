@@ -1,34 +1,107 @@
 #include "holberton.h"
-
 /**
- *_strncpy - copy or replace string into desitny
- *@desitny: destinyi string
- *@source: source string
- *@ n_bytes: number of bytes
- *Return: return the string replaced
+ * print_number - check the code for Holberton School students.
+ *@n: hello
+ * Return: Always 0.
  */
 
-char *_strncpy(char *desitny, char *source, int n_bytes)
-{   /* REPLACE STRING.....*/
-	/* FILL FIRST POSITION IN THE desitny STRING*/
-	int size_source;
+int sacar_digitos(int n);
+int sacar_divisor(int n);
 
-	if (desitny || source)
+void print_number(int n)
+{
+	int i, h, o, d;
+
+	if (n > 0)
 	{
-		/* do nothing if pointer is null */
+
+		i = sacar_digitos(n);
+		o = i - 1;
+		for (h = 0; h < i; h++)
+		{
+			d = sacar_divisor(o);
+			_putchar(n / d + '0');
+			n = n % d;
+			o--;
+		}
+
+	}
+	else if (n < 0)
+	{
+		_putchar(45);
+		i = sacar_digitos(n);
+		o = i - 1;
+		for (h = 0; h < i; h++)
+		{
+			d = sacar_divisor(o);
+			_putchar(((n / d) * -1) + '0');
+			n = n % d;
+			o--;
+		}
+
+	} else if (n == 0)
+	{
+		_putchar('0');
 		return;
 	}
+}
 
-	for (size_source = 0; size_source < n_bytes
-			&& source[size_source] != '\0'; size_source++)
+
+/**
+  * sacar_digitos - check the code for Holberton School students.
+  *@n: hello
+  * Return: Always 0.
+  */
+int sacar_digitos(int n)
+{
+	int count = 0;
+
+	if (n < 0)
+
 	{
-		desitny[size_source] = source[size_source];
-	}
-	/* according to the original function if n_bytes > n_source_bytes */
-	/*it will fill the remaining with null*/
-	for (; size_source < n_bytes; size_source++)
+		while (n < 0)
+		{
+			n = n / 10;
+			count++;
+		}
+	} else
+
 	{
-		desitny[size_source] = '\0';
+
+		while (n > 0)
+		{
+			n = n / 10;
+			count++;
+		}
+
 	}
-	return (desitny);
+
+
+	return (count);
+}
+
+/**
+  * sacar_divisor - check the code for Holberton School students.
+  *@n: hello
+  * Return: Always 0.
+  */
+
+int sacar_divisor(int n)
+{
+	int divisor;
+
+	if (n < 0)
+	{
+		n = n * -1;
+
+	}
+
+	divisor = 1;
+
+	for (; n != 0; n--)
+	{
+		divisor *= 10;
+	}
+
+	return (divisor);
 }
