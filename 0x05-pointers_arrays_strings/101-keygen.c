@@ -1,41 +1,36 @@
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
 #include <stdlib.h>
-
 /**
- * main - check the code for Holberton School students.
+ * main - program to generate random password
  *
- * Return: Always 0.
+ * description: find checksum value from objdump
+ *
+ * Return: Return generated password
  */
 
 int main(void)
-
 {
-
-	srand(time(NULL));
-	/*random number between a range*/
-	/*num = (rand() % (upper-lower + 1)) + lower;*/
-
 	int sum, i, r;
 
-	char a[63] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345678";
+	char a[63] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	char password[100];
-
-
+	
+	/*random number between a range*/
+	/*num = (rand() % (upper-lower + 1)) + lower;*/
+	srand(time(NULL));
 	sum = 0;
 	i = 0;
 
 	while (sum < (2772 - 122))
 	{
-		r = (rand() % (61 - 0 + 1)) + 0;
+		r = rand() % 62;
 		password[i] = a[r];
 		sum += password[i];
 		i++;
 	}
-
 	r = 2772 - sum;
 	password[i] = r;
 	printf("%s\n",  password);
-
 	return (0);
 }
