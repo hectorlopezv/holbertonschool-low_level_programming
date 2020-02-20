@@ -13,7 +13,7 @@ int main(void)
 {
 	int sum, i, r;
 
-	char a[63] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	char a[63] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-={}[]:><,.~";
 	char password[100];
 	
 	/*random number between a range*/
@@ -24,7 +24,7 @@ int main(void)
 
 	while (sum < (2772 - 122))
 	{
-		r = rand() % 62;
+		r = rand() % 86;
 		password[i] = a[r];
 		sum += password[i];
 		i++;
