@@ -14,7 +14,7 @@ int main(void)
 
 	srand(time(0));
 	/*random number between a range*/
-	/*num = (rand() % (62-0 + 1)) + 0;*/
+	/*num = (rand() % (upper-lower + 1)) + lower;*/
 
 	int sum, i, r;
 
@@ -27,7 +27,7 @@ int main(void)
 
 	while (sum < (2772 - 122))
 	{
-		r = (rand() % (62 - 0 + 1)) + 0;
+		r = (rand() % (61 - 0 + 1)) + 0;
 		password[i] = a[r];
 		sum += password[i];
 		i++;
