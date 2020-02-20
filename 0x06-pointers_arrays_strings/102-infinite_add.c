@@ -1,7 +1,6 @@
 #include "holberton.h"
 
 int largo(char *s);
-int _strlen(char *s);
 void rev_string(char *s);
 
 
