@@ -14,7 +14,7 @@ void put_hexadecimal_of_byte(int *contador, int *size, char *b, int *i);
 
 void print_buffer(char *b, int size)
 {
-	if (b[0] == '\0')
+	if (b[0] == '\0' && size <= 0)
 	{
 		printf("\n");
 		return;
