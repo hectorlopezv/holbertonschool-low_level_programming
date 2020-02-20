@@ -1,107 +1,140 @@
-#include "holberton.h"
-/**
- * print_number - check the code for Holberton School students.
- *@n: hello
- * Return: Always 0.
- */
-
-int sacar_digitos(int n);
-int sacar_divisor(int n);
-
-void print_number(int n)
+int largo(char* s1)
 {
-	int i, h, o, d;
+	    int i;
+		    
+		    for (i = 0 ; s1[i] != '\0'; i++)
+				    {
+						        
+						    }
 
-	if (n > 0)
-	{
-
-		i = sacar_digitos(n);
-		o = i - 1;
-		for (h = 0; h < i; h++)
-		{
-			d = sacar_divisor(o);
-			_putchar(n / d + '0');
-			n = n % d;
-			o--;
-		}
-
-	}
-	else if (n < 0)
-	{
-		_putchar(45);
-		i = sacar_digitos(n);
-		o = i - 1;
-		for (h = 0; h < i; h++)
-		{
-			d = sacar_divisor(o);
-			_putchar(((n / d) * -1) + '0');
-			n = n % d;
-			o--;
-		}
-
-	} else if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
+			    return (i);
 }
 
 
-/**
-  * sacar_digitos - check the code for Holberton School students.
-  *@n: hello
-  * Return: Always 0.
-  */
-int sacar_digitos(int n)
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int count = 0;
-
-	if (n < 0)
-
-	{
-		while (n < 0)
-		{
-			n = n / 10;
-			count++;
-		}
-	} else
-
-	{
-
-		while (n > 0)
-		{
-			n = n / 10;
-			count++;
-		}
-
-	}
-
-
-	return (count);
-}
-
-/**
-  * sacar_divisor - check the code for Holberton School students.
-  *@n: hello
-  * Return: Always 0.
-  */
-
-int sacar_divisor(int n)
-{
-	int divisor;
-
-	if (n < 0)
-	{
-		n = n * -1;
-
-	}
-
-	divisor = 1;
-
-	for (; n != 0; n--)
-	{
-		divisor *= 10;
-	}
-
-	return (divisor);
-}
+	    int c, largo_s1, largo_s2, carry, contador, sum1, sum2, sum_total,
+			    d1, d2;
+		    
+		    largo_s1 =0;/*length of n1*/
+			    largo_s2 = 0;/*length of n2*/
+				    carry = 0;/* carry for the addition*/
+					    contador =0;/* counter for filling the resulting string*/
+						    largo_s1 = largo(n1) - 1;
+							    largo_s2 = largo(n2) - 1;
+								    int largo_r = size_r - 1;/* porque no contadmos el nulo*/
+									    
+									    //printf("largo_s1 %d\n",largo_s1);
+										//    //printf("largo_s2 %d\n",largo_s2);
+										//        //printf("size_r %d\n",size_r);
+										            
+										                if (size_r == (largo_s1 + 2) || size_r == (largo_s2 + 2))
+										                    {  /*edge case 1*/
+										                            return (0);
+										                                }
+										                                    
+										                                        if (size_r <= largo_s1 +2 || size_r <= largo_s2 + 2)
+										                                            {  /* edge case 2*/
+										                                                    return (0);
+										                                                        }
+										                                                            
+										                                                                c = (largo_s1 < largo_s2) ? largo_s2 : largo_s1;/*greathest string*/
+										                                                                    
+										                                                                        for (; largo_r >= 0; largo_r--)/* loop backwards*/
+										                                                                            {
+										                                                                                    if (largo_s1 >= 0  || largo_s2 >=0)
+										                                                                                            {
+										                                                                                                    sum1 = (n1[largo_s1] -'0'  >= 0 && n1[largo_s1] -'0' <= 9) ? n1[largo_s1] -'0' : 0;
+										                                                                                                            /* if char is a number take it if not put a 0 in it*/
+										                                                                                                                    sum2 = (n2[largo_s2] -'0'  >= 0 && n2[largo_s2] -'0' <= 9) ? n2[largo_s2] -'0' : 0;
+										                                                                                                                            
+										                                                                                                                                    if (largo_s2 < 0)
+										                                                                                                                                            {   /*case when one string is greather thant the other we jut out 0*/
+										                                                                                                                                                        /* because <0 is no a valid index in array*/
+										                                                                                                                                                                    sum2=0;
+										                                                                                                                                                                            }
+										                                                                                                                                                                                    if (largo_s1 < 0)
+										                                                                                                                                                                                            {
+									                                                                                                                                                                                                        /*case when one string is greather thant the other we jut out 0*/
+										                                                                                                                                                                                                                    /* because <0 is no a valid index in array*/
+										                                                                                                                                                                                                                                sum1=0;
+										                                                                                                                                                                                                                                        }
+										                                                                                                                                                                                                                                                
+										                                                                                                                                                                                                                                                        sum_total = sum1 + sum2 + carry  ;
+										                                                                                                                                                                                                                                                                //printf("%d\n",sum1);
+										                                                                                                                                                                                                                                                                        //printf("%d\n",sum2);
+										                                                                                                                                                                                                                                                                                //printf("%d\n",sum_total);
+										                                                                                                                                                                                                                                                                                        d2 = sum_total / 10;/*take if n>0*/
+										                                                                                                                                                                                                                                                                                                d1 =sum_total % 10;
+										                                                                                                                                                                                                                                                                                                        //printf("%d\n",d2);
+										                                                                                                                                                                                                                                                                                                                //printf("%d\n",d1);
+										                                                                                                                                                                                                                                                                                                                        carry = d2;
+										                                                                                                                                                                                                                                                                                                                                r[contador] = d1 + '0';/*assign */
+										                                                                                                                                                                                                                                                                                                                                        if (contador == c  && sum_total > 9)
+										                                                                                                                                                                                                                                                                                                                                                    {
+										                                                                                                                                                                                                                                                                                                                                                                //printf("hector");
+										                                                                                                                                                                                                                                                                                                                                                                                r[contador + 1] = d2 + '0';
+										                                                                                                                                                                                                                                                                                                                                                                                                contador++;
+										                                                                                                                                                                                                                                                                                                                                                                                                            }
+										                                                                                                                                                                                                                                                                                                                                                                                                                    //printf("%c\n",r[contador]);
+										                                                                                                                                                                                                                                                                                                                                                                                                                            //printf("\n");
+										                                                                                                                                                                                                                                                                                                                                                                                                                                    //printf("contador de i es: %d, %d\n",largo_s1,largo_s2);
+										                                                                                                                                                                                                                                                                                                                                                                                                                                            //printf("contador de contador es:%d\n",contador);
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                    //printf("valor de c %d\n",c);
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                            largo_s2--;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                    largo_s1--;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                            contador++;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           }
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   else
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           {   /* going to break when the addition is completed*/
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       r[contador] = '\0';
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   rev_string(r);/*reverse the string for the correct output*/
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               break;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       }
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               }
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       return r;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       }
+										
+									
+										
+										
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       void rev_string(char *s)
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {
+										
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       	int b, c;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       		char holder;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       			
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       				int length = _strlen(s);
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       					b = 0;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       						c = length;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       							
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       								while (c >= b)
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       									{
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       											holder = s[b];
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       													s[b] = s[c];
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       															s[c] = holder;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																	c--;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																			b++;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				}
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				}
+										
+										
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				int _strlen(char *s)
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				{
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				    int counter, a;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				        
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				            counter = 0;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				                a = 0;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				                    
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				                    	while (s[a] != '\0')
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				                    		{
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				                    				++counter;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				                    						++a;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				                    							}
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				                    								--counter;
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				                    									
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				                    										return (counter);
+										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       																				                    										}
