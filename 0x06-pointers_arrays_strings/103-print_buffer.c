@@ -14,6 +14,11 @@ void put_hexadecimal_of_byte(int *contador, int *size, char *b, int *i);
 
 void print_buffer(char *b, int size)
 {
+	if (size <= 0)
+	{
+		printf("\n");
+		return;
+	}
 	int i, linea, contador, f, s, contador_vacio;
 
 	i = 0;
