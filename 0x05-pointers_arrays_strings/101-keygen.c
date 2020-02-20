@@ -14,7 +14,7 @@ int main(void)
 	int sum, i, r;
 
 	char a[87] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-={}[]:><,.~";
-	char password[100];
+	char password[124];
 	
 	/*random number between a range*/
 	/*num = (rand() % (upper-lower + 1)) + lower;*/
