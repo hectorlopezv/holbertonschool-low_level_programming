@@ -5,6 +5,13 @@ int check_if_printable(char *b, int f, int s);
 void put_spaces_if_the_is_no_char(int *contador_vacio, int *contador);
 void put_hexadecimal_of_byte(int *contador, int *size, char *b, int *i);
 
+/**
+ * print_buffer - check the code for Holberton School students.
+ *@b: string
+ *@size: size of the string
+ *Return: Always 0.
+ */
+
 void print_buffer(char *b, int size)
 {
 	int i, linea, contador, f, s, contador_vacio;
@@ -54,6 +61,15 @@ void print_buffer(char *b, int size)
 	}
 }
 
+/**
+ *put_hexadecimal_of_byte - check the code for Holberton School students.
+ *@contador: contador
+ *@size: size of the string
+ *@b:string
+ *@i:counter
+ *Return: Always 0.
+ */
+
 void put_hexadecimal_of_byte(int *contador, int *size, char *b, int *i)
 {
 	int h;
@@ -79,6 +95,14 @@ void put_hexadecimal_of_byte(int *contador, int *size, char *b, int *i)
 	}
 }
 
+
+/**
+ *put_spaces_if_the_is_no_char - check the code for Holberton School students.
+ *@contador_vacio: contador vacio
+ *@contador: contador
+ *Return: Always 0.
+ */
+
 void put_spaces_if_the_is_no_char(int *contador_vacio, int *contador)
 {
 	while (*contador <= 9)
@@ -96,6 +120,14 @@ void put_spaces_if_the_is_no_char(int *contador_vacio, int *contador)
 		*contador_vacio = *contador_vacio + 1;
 	}
 }
+
+/**
+ *check_if_printable - check the code for Holberton School students.
+ *@b: string
+ *@f: counter
+ *@s: counter 2
+ *Return: Always 0.
+ */
 
 int check_if_printable(char *b, int f, int s)
 {
