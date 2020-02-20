@@ -13,7 +13,7 @@ int main(void)
 {
 	int sum, i, r;
 
-	char a[63] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-={}[]:><,.~";
+	char a[87] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-={}[]:><,.~";
 	char password[100];
 	
 	/*random number between a range*/
