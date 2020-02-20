@@ -12,7 +12,7 @@ int main(void)
 
 {
 
-	srand(time(0));
+	srand(time(NULL));
 	/*random number between a range*/
 	/*num = (rand() % (upper-lower + 1)) + lower;*/
 
