@@ -18,14 +18,13 @@ char *_strstr(char *s1, char *s2)
 		suma_s1 += s2[size_s2];
 	}
 	--size_s2;
-	if (s1[0] == '\0')
+	if (s1)
 	{
 		return (s1);
 	}
 
-	while (1)
+	while ((eturn_pointer = _strpbrk(s1, s2)))
 	{
-		eturn_pointer = _strpbrk(s1, s2);
 		counter_rep = 0;
 		suma_s2 = 0;
 		for (iterator_s1 = 0; iterator_s1 <= size_s2; iterator_s1++)
