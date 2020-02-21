@@ -32,18 +32,14 @@ char *_strstr(char *s1, char *s2)
 				suma_s2 += s2[iterator_s1];
 			}
 		}
-		if (counter_rep == 0)
-		{
-			return (0);
-		}
 		eturn_pointer -= counter_rep;
 		if (suma_s2 == suma_s1)
 		{
-			break;
+			return (eturn_pointer);
 		}
 		++s1;
 	}
-	return (eturn_pointer);
+	return (0);
 }
 
 /**
