@@ -26,6 +26,7 @@ char *_strchr(char *s, char c)
 
 	if (*s == c)
 	{/* case when c== '\0'*/
+		/* mega edge case*/
 		return (s);
 	}
 
