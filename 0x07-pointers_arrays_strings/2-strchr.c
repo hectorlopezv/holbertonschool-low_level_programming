@@ -25,9 +25,11 @@ char *_strchr(char *s, char c)
 	}
 
 	if (*s == c)
-	{
+	{/* case when c== '\0'*/
 		return (s);
 	}
+
+	return (0);/*null*/
 
 }
 
