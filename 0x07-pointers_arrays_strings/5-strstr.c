@@ -44,7 +44,7 @@ char *_strstr(char *s1, char *s2)
 
 		++s1;
 	}
-	return (0);
+	return (eturn_pointer);
 }
 
 /**
