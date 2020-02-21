@@ -25,8 +25,14 @@ char *_strchr(char *s, char c)
 		++s;
 	}
 	/*printf("%c",*s);*/
-
-	return (NULL);
+	if (counter == 0)
+	{
+		return (NULL);
+	}
+	else
+	{
+		return (s);
+	}
 
 }
 
