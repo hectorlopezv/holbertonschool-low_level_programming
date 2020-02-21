@@ -10,10 +10,11 @@
 
 char *_strchr(char *s, char c)
 {
-	if (!s )
+	if (!s)
 	{
 		return (NULL);
 	}
+
 	int counter;
 
 	counter = 0;
@@ -29,7 +30,6 @@ char *_strchr(char *s, char c)
 		++s;
 	}
 	/*printf("%c",*s);*/
-
 	return (s);
 
 }
