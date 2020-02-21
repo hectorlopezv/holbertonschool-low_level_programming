@@ -28,13 +28,8 @@ char *_strpbrk(char *s, char *accept)
 		++s;
 	}
 
-	if (*s == accept[j])
-	{/* case when c== '\0'*/
-		/* mega edge case*/
-		return (s);
-	}
 
-	return (0);
+	return ('\0');
 
 
 }
