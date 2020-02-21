@@ -24,7 +24,7 @@ char *_strstr(char *s1, char *s2)
 	{
 		counter_rep = 0;
 		suma_s2 = 0;
-		for (iterator_s1 = 0; iterator_s1 <= size_s2; iterator_s1++)
+		for (iterator_s1 = 0; iterator_s1 <= size_s2 + 1; iterator_s1++)
 		{
 			if (*eturn_pointer == s2[iterator_s1])
 			{
