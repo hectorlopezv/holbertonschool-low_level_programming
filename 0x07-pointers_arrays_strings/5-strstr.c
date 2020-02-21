@@ -36,15 +36,16 @@ char *_strstr(char *s1, char *s2)
 				suma_s2 += s2[iterator_s1];
 			}
 		}
+		if (counter_rep == 0)
+		{
+			break;
+		}
 		eturn_pointer -= counter_rep;
 		if (suma_s2 == suma_s1)
 		{
 			break;
 		}
-		if (counter_rep > 0)
-		{
-			s1++;
-		}
+		++s1;
 	}
 	return (eturn_pointer);
 }
