@@ -14,11 +14,11 @@ unsigned int _strspn(char *s, char *accept)
 	int contador = 0;
 	int contador_2 = 0;
 	int i;
-	int j =0;
+	int j;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		//contador_2 = 0;
+		/*contador_2 = 0;*/
 
 		for (j = 0; accept[j] != '\0'; j++)
 		{
@@ -33,14 +33,13 @@ unsigned int _strspn(char *s, char *accept)
 			}
 
 		}
-		if(accept[j] == '\0')
+		if (accept[j] == '\0')
 		{
 			break;
 		}
 
-		//printf ("%c %c  %d %d %d\n", s[i] ,accept[j], contador_2,contador,j);
-
+		/*printf ("%c %c  %d %d %d\n", s[i] ,accept[j], contador_2,contador,j)*/
 	}
-	return contador;
+	return (contador);
 }
 
