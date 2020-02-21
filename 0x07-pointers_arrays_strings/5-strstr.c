@@ -36,13 +36,13 @@ char *_strstr(char *s1, char *s2)
 		eturn_pointer -= counter_rep;
 		if (suma_s2 == suma_s1)
 		{
-			break;
+			return (eturn_pointer);
 		}
 
 		s1++;
 	}
 
-	return (eturn_pointer);
+	return (0);
 }
 /**
  *_strpbrk - set bytes of first ocurrence
