@@ -15,7 +15,7 @@ char *_strpbrk(char *s, char *accept)
 {
 	int j;
 
-	while (*s != '\n')
+	while (*s != '\0')
 	{
 		for (j = 0; accept[j] != '\0'; j++)
 		{
@@ -25,10 +25,16 @@ char *_strpbrk(char *s, char *accept)
 			}
 
 		}
-		s++;
+		++s;
 	}
 
+	if (*s == accept[j])
+	{/* case when c== '\0'*/
+		/* mega edge case*/
+		return (s);
+	}
 
 	return (0);
+
 
 }
