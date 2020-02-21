@@ -34,7 +34,7 @@ char *_strstr(char *s1, char *s2)
 		}
 		if (counter_rep == 0)
 		{
-			break;
+			return (0);
 		}
 		eturn_pointer -= counter_rep;
 		if (suma_s2 == suma_s1)
