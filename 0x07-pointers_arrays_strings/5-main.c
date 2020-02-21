@@ -8,8 +8,8 @@
  *     */
 int main(void)
 {
-	char *s = "GeeksforGeeks";
-	char *f = "for";
+	char *s = "This is a test string for testing";
+	char *f = "test";
 	//char *s = "hello, world";
 	//char *f = "zzza";
 	char *t;

@@ -23,6 +23,10 @@ char *_strstr(char *s1, char *s2)
 		eturn_pointer = _strpbrk(s1, s2);
 		counter_rep = 0;
 		suma_s2 = 0;
+		if(!eturn_pointer)
+		{
+			break;
+		}
 		for (iterator_s1 = 0; iterator_s1 <= size_s2; iterator_s1++)
 		{
 			if (*eturn_pointer == s2[iterator_s1])
@@ -37,6 +41,7 @@ char *_strstr(char *s1, char *s2)
 		{
 			return (eturn_pointer);
 		}
+
 		++s1;
 	}
 	return (0);
