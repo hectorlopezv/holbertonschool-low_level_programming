@@ -18,7 +18,7 @@ char *_strstr(char *s1, char *s2)
 		suma_s1 += s2[size_s2];
 	}
 	--size_s2;
-	if (s1)
+	if (suma_s1 == 0)
 	{
 		return (s1);
 	}
