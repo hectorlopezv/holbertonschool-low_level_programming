@@ -1,4 +1,6 @@
 #include "holberton.h"
+#include <stdio.h>
+
 /**
  * _strchr - copy
  * @s: string
@@ -22,8 +24,9 @@ char *_strchr(char *s, char c)
 
 		++s;
 	}
+	printf("%c",*s);
 
-	return (s);
+	return (NULL);
 
 }
 
