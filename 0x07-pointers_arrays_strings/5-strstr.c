@@ -14,6 +14,10 @@ char *_strstr(char *s1, char *s2)
 	suma_s2 = 0;
 	suma_s1 = 0;
 	counter_rep = 0;
+	if (!s1 || !s2)
+	{
+		return (0);
+	}
 	for (size_s2 = 0; s2[size_s2] != '\0'; size_s2++)
 	{
 		suma_s1 += s2[size_s2];
@@ -49,6 +53,7 @@ char *_strstr(char *s1, char *s2)
 	}
 	return (eturn_pointer);
 }
+
 /**
  *_strpbrk - set bytes of first ocurrence
  *@s: string
@@ -65,6 +70,12 @@ char *_strpbrk(char *s, char *accept)
 		{
 			return (s);
 		}
+		if (*s == '\0')
+		{
+			continue;
+
+		}
+
 		++s;
 	}
 	return (0);
