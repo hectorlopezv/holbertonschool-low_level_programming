@@ -14,7 +14,6 @@ char *_strstr(char *s1, char *s2)
 	suma_s2 = 0;
 	suma_s1 = 0;
 	counter_rep = 0;
-
 	for (size_s2 = 0; s2[size_s2] != '\0'; size_s2++)
 	{
 		suma_s1 += s2[size_s2];
@@ -24,7 +23,11 @@ char *_strstr(char *s1, char *s2)
 	{
 		counter_rep = 0;
 		suma_s2 = 0;
-		for (iterator_s1 = 0; iterator_s1 <= size_s2 + 1; iterator_s1++)
+		if (*s1 == '\0')
+		{
+			return (eturn_pointer);
+		}
+		for (iterator_s1 = 0; iterator_s1 <= size_s2; iterator_s1++)
 		{
 			if (*eturn_pointer == s2[iterator_s1])
 			{
@@ -36,15 +39,14 @@ char *_strstr(char *s1, char *s2)
 		eturn_pointer -= counter_rep;
 		if (suma_s2 == suma_s1)
 		{
-			return (eturn_pointer);
+			break;
 		}
 		if (counter_rep > 0)
 		{
 			s1++;
 		}
 	}
-
-	return (0);
+	return (eturn_pointer);
 }
 /**
  *_strpbrk - set bytes of first ocurrence
