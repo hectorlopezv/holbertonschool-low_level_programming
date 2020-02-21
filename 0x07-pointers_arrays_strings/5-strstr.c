@@ -13,24 +13,16 @@ char *_strstr(char *s1, char *s2)
 
 	suma_s2 = 0;
 	suma_s1 = 0;
-	counter_rep = 0;
-	if (!s1 || !s2)
-	{
-		return (0);
-	}
 	for (size_s2 = 0; s2[size_s2] != '\0'; size_s2++)
 	{
 		suma_s1 += s2[size_s2];
 	}
 	--size_s2;
-	while ((eturn_pointer = _strpbrk(s1, s2)))
+	while (1)
 	{
+		eturn_pointer = _strpbrk(s1, s2);
 		counter_rep = 0;
 		suma_s2 = 0;
-		if (*s1 == '\0')
-		{
-			return (eturn_pointer);
-		}
 		for (iterator_s1 = 0; iterator_s1 <= size_s2; iterator_s1++)
 		{
 			if (*eturn_pointer == s2[iterator_s1])
