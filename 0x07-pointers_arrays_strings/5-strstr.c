@@ -38,8 +38,10 @@ char *_strstr(char *s1, char *s2)
 		{
 			return (eturn_pointer);
 		}
-
-		s1++;
+		if (counter_rep > 0)
+		{
+			s1++;
+		}
 	}
 
 	return (0);
