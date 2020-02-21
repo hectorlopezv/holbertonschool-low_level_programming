@@ -10,6 +10,10 @@
 
 char *_strchr(char *s, char c)
 {
+	if (!s )
+	{
+		return (NULL);
+	}
 	int counter;
 
 	counter = 0;
