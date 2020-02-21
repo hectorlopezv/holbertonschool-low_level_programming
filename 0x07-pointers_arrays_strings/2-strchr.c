@@ -23,13 +23,9 @@ char *_strchr(char *s, char c)
 		++s;
 	}
 
-	if (counter > 0)
+	if (counter == 0)
 	{
-		return (s);
-	}
-	else
-	{
-		return ('\0');
+		return (NULL);
 	}
 }
 
