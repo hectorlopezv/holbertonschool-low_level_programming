@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stddef.h>
-
 /**
  * _strchr - copy
  * @s: string
@@ -19,7 +17,7 @@ char *_strchr(char *s, char c)
 		if (*s == c)
 		{
 			++counter;
-			break;
+			return (s);
 		}
 
 		++s;
@@ -31,7 +29,7 @@ char *_strchr(char *s, char c)
 	}
 	else
 	{
-		return (NULL);
+		return ('\0');
 	}
 }
 
