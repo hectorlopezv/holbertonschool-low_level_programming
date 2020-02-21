@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-
 /**
  * _strchr - copy
  * @s: string
@@ -10,10 +8,6 @@
 
 char *_strchr(char *s, char c)
 {
-	if (!s)
-	{
-		return (NULL);
-	}
 
 	int counter;
 
