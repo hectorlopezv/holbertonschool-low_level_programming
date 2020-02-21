@@ -12,30 +12,31 @@ void print_diagsums(int *a, int size)
 {
 	const int matrix_size =  size;
 	int (*p)[matrix_size];
-	int (*aa)[matrix_size];
-	int (*p1);
+	/*int (*aa)[matrix_size];*/
+	/*int (*p1);*/
 	int i, j, sum_diagonal, sum_opposite_diagonal;
 
 	sum_diagonal = 0;
 	sum_opposite_diagonal = 0;
-	aa = (int (*)[matrix_size]) a;
+	/*aa = (int (*)[matrix_size]) a;*/
 
 	p = (int (*)[matrix_size]) a;
 
-	for (i = 0; p != aa + matrix_size; p++, i++)
+	/*for (i = 0; p != aa + matrix_size; p++, i++)*/
+	for (i = 0; i < matrix_size; i++)
 	{
-		for (p1 = *p, j = 0 ; p1 != *p + matrix_size; p1++, j++)
+		/*for (p1 = *p, j = 0 ; p1 != *p + matrix_size; p1++, j++)*/
+		for (j = 0 ; j < matrix_size; j++)
 		{
-
 			if (i == j)
 			{
 
-				sum_diagonal += *p1;
+				sum_diagonal += *(*(p + i) + j);
 			}
 
 			if (i + j == matrix_size - 1)
 			{
-				sum_opposite_diagonal += *p1;
+				sum_opposite_diagonal += *(*(p + i) + j);
 			}
 		}
 
