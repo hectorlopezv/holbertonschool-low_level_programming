@@ -23,7 +23,7 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * funcion: function to recursion
+ *funcion - function to recursion
  *@i:iterator
  *@n: number of sqrt
  *Return: return recursive character
