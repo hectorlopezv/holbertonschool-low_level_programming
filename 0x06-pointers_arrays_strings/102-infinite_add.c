@@ -1,9 +1,5 @@
 #include "holberton.h"
 
-int largo(char *s);
-void rev_string(char *s);
-
-
 /**
  *infinite_add - add two strings
  *@n1: 1 string
@@ -12,7 +8,8 @@ void rev_string(char *s);
  *@size_r: size of buffer
  *Return: return string added
  */
-
+int largo(char *s);
+void rev_string(char *s);
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int c, largo_s1, largo_s2, carry, contador, sum1, sum2, sum_total,
@@ -158,4 +155,3 @@ int largo(char *s1)
 
 	return (i);
 }
-
