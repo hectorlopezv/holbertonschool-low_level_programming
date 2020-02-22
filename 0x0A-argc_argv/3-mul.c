@@ -15,14 +15,18 @@ int main(int argc, char *argv[])
 	b = 0;
 	result = 0;
 
-	if (argc > 0)
+	if (argc == 3)
 	{
 		a = *(*(argv + 1)) - 48;
 		b = *(*(argv + 2)) - 48;
 		result = a * b;
-		printf("%d\n", a * b);
+		printf("%d\n", result);
+		return (0);
 	}
 
-	return (result);
+
+	printf("Error\n");
+	return (1);
+
 }
 
