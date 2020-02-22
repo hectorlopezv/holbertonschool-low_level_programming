@@ -31,6 +31,10 @@ int is_palindrome(char *s)
 
 int comparador(int i, int size, char *s, int add)
 {
+	if (s[0] == '\0')
+	{
+		return (0);
+	}
 
 	if (i + add == size)
 	{
