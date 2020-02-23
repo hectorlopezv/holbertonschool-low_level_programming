@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+/**
+ *  *main - print the multiplication of two numbers
+ *   *@argc: is the numbers of counters
+ *    *@argv: is the array of arguments
+ *     *Return: return multiplication of a,b
+ *      */
+int adding(int count,char *argv);
+
+int main(int argc, char *argv[])
+{
+	//int a;
+
+	//a = 0;
+	//	printf("%s\n",*argv);
+	//	printf("%d\n",argc - 1);
+	return (adding(argc - 1,*(argv+1)));
+}
+
+int adding(int count,char * s)
+{
+	printf("%s\n",s);
+	printf("%c\n",*s);
+	printf("%s\n",s++);
+	if (!*s)
+	{
+		return (0);
+
+	}
+	if ( count == 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+
+	if ((*s >= 32 && *s <=47) ||(*s > 57 && *s <= 126 ) )
+	{
+		printf("Eror\n");
+		return (1);
+	}
+
+	//if (*s >=48 && *s <=57)
+	//{
+	//	return (adding(count,s++));
+	//}
+
+	return 0;
+
+}
