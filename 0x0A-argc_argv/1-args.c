@@ -6,13 +6,11 @@
  *Return: return a print to the console of numbers of characters
  */
 
-int main(__attribute__((unused))int argc, char *argv[])
+int main(int argc, __attribute__((unused))char *argv[])
 {
-	if (*argv)
-	{
 
-		printf("%d\n", argc - 1);
+	printf("%d\n", argc - 1);
 
-	}
 
 }
+
