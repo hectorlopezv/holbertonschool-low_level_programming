@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+int _atoi(char *s);
+int adding(char **argv);
+int verifiy_special_character(char *s);
+
+
 /**
  *main - print the multiplication of two numbers
  *@argc: is the numbers of counters
@@ -7,49 +12,80 @@
  *Return: return multiplication of a,b
  */
 
-int _atoi(char *s);
-
-int adding(char **argv);
-
-int main(__attribute__((unused)) int argc, char *argv[])
+int main(int argc, char *argv[])
 {
+	int counter;
 
-	//a = 0;
-	//	printf("%s\n",*argv);
-	//	printf("%d\n",argc - 1);
-	return (adding(argv+1));
-}
-
-int adding(char ** s)
-{
-
-	int n;
-
-	n = _atoi(*s);
-
-	printf("%d",n);
-
-	if (!*s)
+	if (argc == 1)
 	{
-		return 0;
+		printf("0\n");
+		return (0);
 	}
 
-	if ((**s >= 32 && **s <=47) ||(**s > 57 && **s <= 126 ) )
+	argv++;
+
+	for (counter = 0; counter < argc - 1; ++argv, ++counter)
 	{
-		printf("Eror\n");
-		return (1);
+		if (verifiy_special_character(*argv) == 1)
+		{
+			printf("Error\n");
+			return (1);
+
+		}
 	}
 
-	if (**s >= '0' && **s <= '9')
-	{
-		return _atoi(*s) +  adding(s+1);
-	}
-
+	argv -= counter;
+	printf("%d\n", adding(argv));
 	return (0);
 
 }
 
+/**
+ *adding - add n numbers using recursion
+ *@s: a pointer to a pointer
+ *Return: a integer with the total addition of the n numbers
+ */
 
+int adding(char **s)
+{
+	if (!*s)
+	{
+		return (0);
+	}
+
+	return (_atoi(*s) +  adding(s + 1));
+
+}
+
+/**
+ *verifiy_special_character - verifiy_special_character
+ *@p: string were are going to test
+ *Return: return 1 if true 0 otherwise
+ */
+
+int verifiy_special_character(char *p)
+{
+	int i;
+
+	for (i = 0 ; p[i] != '\0'; i++)
+	{
+
+		if ((p[i] >= 32 && p[i] <= 47) || (p[i] > 57 && p[i] <= 126))
+		{
+			return (1);
+		}
+
+	}
+
+	return (0);
+}
+
+
+/**
+ *_atoi - take number out a string
+ *@s: string that we are going to test with
+ *Return: return 1 if true 0 otherwise
+ */
 
 int _atoi(char *s)
 {
@@ -66,7 +102,7 @@ int _atoi(char *s)
 	{
 		if ((contador > 0) && (s[i] == ' '))
 
-		{ /* break space*/
+		{
 			str = str;
 			break;
 		}
@@ -85,6 +121,6 @@ int _atoi(char *s)
 		}
 	}
 
-	//printf("%d\n",str);
+
 	return (str * n);
 }
