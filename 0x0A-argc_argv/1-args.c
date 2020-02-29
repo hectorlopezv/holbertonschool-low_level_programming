@@ -6,7 +6,7 @@
  *Return: return a print to the console of numbers of characters
  */
 
-int main(int argc, char *argv[])
+int main(__attribute__((unused))int argc, char *argv[])
 {
 	if (*argv)
 	{
