@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  *_strdup - dump
  * @str: string literal
@@ -22,7 +23,7 @@ char *_strdup(char *str)
 
 	}
 
-	C = (char *) malloc(j);
+	C = (char *) malloc(j + 1);
 
 	if (C == NULL)
 	{
