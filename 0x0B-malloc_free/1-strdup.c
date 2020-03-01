@@ -1,6 +1,6 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
+
 
 /**
  *_strdup - dump
@@ -10,7 +10,13 @@
 
 char *_strdup(char *str)
 {
-	int size, i, j;
+	int i, j;
+	char *C;
+
+	if (str == NULL)
+	{
+		return (NULL);
+	}
 
 	for (j = 0; str[j] != '\0'; j++)
 	{
@@ -18,11 +24,9 @@ char *_strdup(char *str)
 	}
 	j++;
 
-	size = j;
+	C = (char *) malloc(j);
 
-	char *C = (char *)  malloc(size);
-
-	for (i = 0; i < size; i++)
+	for (i = 0; i < j; i++)
 	{
 		C[i] = str[i];
 	}
