@@ -1,20 +1,17 @@
 #include "holberton.h"
 #include <stdlib.h>
-
-
 /**
  *_strdup - dump
  * @str: string literal
  *Return: return string
  */
 
-
 char *_strdup(char *str)
 {
 	int i, j;
 	char *C;
 
-	if (!str)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
@@ -25,6 +22,7 @@ char *_strdup(char *str)
 
 
 	}
+	j++;
 
 	C = (char *) malloc(j);
 
@@ -34,5 +32,6 @@ char *_strdup(char *str)
 	}
 
 	C[i] = str[i];
+
 	return (C);
 }
