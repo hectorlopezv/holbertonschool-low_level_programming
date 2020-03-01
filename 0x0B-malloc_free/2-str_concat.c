@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 int _strlen(char *s);
 
@@ -13,70 +14,39 @@ int _strlen(char *s);
 char *str_concat(char *s1, char *s2)
 {
 
-	int i, j;
+	int size_s1, size_s2;
 	int k, counter;
 	char *C;
 
-	if (s1 != NULL && s2 != NULL)
+	if (s1 == NULL)
 	{
-		i = _strlen(s1);
-		j = _strlen(s2) + 1;
-		C = (char *) malloc(i + j);
-
-		if (C == NULL)
-		{
-			return (NULL);
-		}
-
-		for (k = 0, counter = 0; k < i; k++, counter++)
-		{
-			C[k] = s1[counter];
-		}
-		C[k] = s1[counter];
-		for (counter = 0; counter < j; counter++, k++)
-		{
-			C[k] = s2[counter];
-		}
-		C[k] = s2[counter];
-
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
 	}
 
-	if (s1 != NULL && s2 == NULL)
-	{
-		i = _strlen(s1) + 1;
-		j = 0;
-		C = (char *) malloc(i + j);
+	size_s1 = _strlen(s1);
+	size_s2 = _strlen(s2);
 
-		if (C == NULL)
-		{
-			return (NULL);
-		}
-		for (k = 0, counter = 0; k < i; k++, counter++)
-		{
-			C[k] = s1[counter];
-		}
+	C = (char *) malloc(size_s1 + size_s2 + 1);
+
+	if (C == NULL)
+	{
+		return (NULL);
+	}
+
+	for (k = 0, counter = 0; k < size_s1; k++, counter++)
+	{
 		C[k] = s1[counter];
 	}
 
-
-	if (s1 == NULL && s2 != NULL)
+	for (counter = 0; counter < size_s2; counter++, k++)
 	{
-		i = 0;
-		j = _strlen(s2) + 1;
-		C = (char *) malloc(i + j);
-
-		if (C == NULL)
-		{
-			return (NULL);
-		}
-		for (counter = 0, k = 0; counter < j; counter++, k++)
-		{
-			C[k] = s2[counter];
-		}
 		C[k] = s2[counter];
-
 	}
-
+	C[k] = s2[counter];
 
 	return (C);
 }
