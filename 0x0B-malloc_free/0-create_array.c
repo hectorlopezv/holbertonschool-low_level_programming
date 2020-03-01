@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  *create_array - create malloc array and fill it with C char
@@ -23,10 +24,16 @@ char *create_array(unsigned int size, char c)
 	{
 		return (C);
 	}
+
 	for (i = 0; i < size; i++)
 	{
+
+
 		C[i] = c;
 	}
+
+	C[i] = '\0';
+
 
 	return (C);
 
