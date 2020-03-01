@@ -32,10 +32,12 @@ char *str_concat(char *s1, char *s2)
 		{
 			C[k] = s1[counter];
 		}
+		C[k] = s1[counter];
 		for (counter = 0; counter < j; counter++, k++)
 		{
 			C[k] = s2[counter];
 		}
+		C[k] = s2[counter];
 
 	}
 
@@ -53,6 +55,7 @@ char *str_concat(char *s1, char *s2)
 		{
 			C[k] = s1[counter];
 		}
+		C[k] = s1[counter];
 	}
 
 
@@ -70,6 +73,7 @@ char *str_concat(char *s1, char *s2)
 		{
 			C[k] = s2[counter];
 		}
+		C[k] = s2[counter];
 
 	}
 
