@@ -22,6 +22,7 @@ char *_strdup(char *str)
 	{
 
 	}
+	j++;
 
 	C = (char *) malloc(j);
 
@@ -29,6 +30,7 @@ char *_strdup(char *str)
 	{
 		C[i] = str[i];
 	}
+	C[i] = str[i];
 
 	return (C);
 }
