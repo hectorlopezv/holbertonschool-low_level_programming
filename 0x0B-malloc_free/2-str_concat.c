@@ -25,7 +25,7 @@ char *str_concat(char *s1, char *s2)
 
 		if (C == NULL)
 		{
-			return (C);
+			return (NULL);
 		}
 
 		for (k = 0, counter = 0; k < i; k++, counter++)
@@ -47,7 +47,7 @@ char *str_concat(char *s1, char *s2)
 
 		if (C == NULL)
 		{
-			return (C);
+			return (NULL);
 		}
 		for (k = 0, counter = 0; k < i; k++, counter++)
 		{
@@ -64,7 +64,7 @@ char *str_concat(char *s1, char *s2)
 
 		if (C == NULL)
 		{
-			return (C);
+			return (NULL);
 		}
 		for (counter = 0, k = 0; counter < j; counter++, k++)
 		{
