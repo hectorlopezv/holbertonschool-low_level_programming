@@ -20,13 +20,15 @@ int **alloc_grid(int width, int height)
 	Matrix = (int **) malloc(sizeof(int **) * height);
 	if (Matrix == NULL)
 	{
+		free(Matrix);
 		return (NULL);
 	}
 	for (j = 0; j < height; j++)
 	{
 		Matrix[j] = (int *) malloc(sizeof(int) * width);
 		if (Matrix[j] == NULL)
-		{
+		{ /* case of memory leak*/
+			free(Matrix);
 			return (NULL);
 		}
 	}
