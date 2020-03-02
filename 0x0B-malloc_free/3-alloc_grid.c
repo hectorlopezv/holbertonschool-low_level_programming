@@ -29,7 +29,8 @@ int **alloc_grid(int width, int height)
 		if (Matrix[j] == NULL)
 		{ /* case of memory leak erase the one before*/
 
-			free(Matrix[j-1]);
+			free(Matrix[j]);
+			free(Matrix);
 			return (NULL);
 		}
 	}
