@@ -9,40 +9,36 @@
 
 int **alloc_grid(int width, int height)
 {
-	int j, rows, colum;
-	int **Matrix;
+	//int  rows, colum;
+	//int **Matrix;
 
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
 
-	Matrix = (int **) malloc(sizeof(int **) * height);
-	if (Matrix == NULL)
+	int **A = (int **)malloc(height * sizeof(int *));		// or int* A[M];
+
+	if (A == NULL)
 	{
-		free(Matrix);/* case of memory leak*/
 		return (NULL);
 	}
-	for (j = 0; j < height; j++)
+
+	// dynamically allocate memory of size M*N and let *A point to it
+	*A = (int *)malloc(sizeof(int) * height * width);
+	if (*A == NULL)
 	{
-		Matrix[j] = (int *) malloc(sizeof(int) * width);
-		if (Matrix[j] == NULL)
-		{ /* case of memory leak erase the one before*/
-
-			free(Matrix[j]);
-			free(Matrix);
-			return (NULL);
-		}
+		return (NULL);
 	}
+	// position allocated memory across M pointers
+	for (int r = 0; r < width; r++)
+		A[r] = (*A + width*r);
 
-	for (rows = 0; rows < height; rows++)
-	{
-		for (colum = 0; colum < width; colum++)
-		{
-			Matrix[rows][colum] = 0;
+	// assign values to allocated memory
+	for (int r = 0; r < height; r++)
+		for (int c = 0; c < width; c++)
+			A[r][c] = 0;	// or *(A[r] + c) or *(*(A + r) + c)
 
-		}
-	}
-	return (Matrix);
+	return (A);
 }
 
