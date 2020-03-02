@@ -12,49 +12,44 @@ int _strlen(char *s);
 
 char *argstostr(int ac, char **av)
 {
-	if (ac - 1  <= 0 || *(av + 1) == NULL)
+	if (ac == 0 || *av  == NULL)
 	{
 		return (NULL);
 	}
 
-	av++;
-	int  sum_char, counter, numeros;
+
+
+	int  sum_char, counter, numeros, j;
 	char *C;
 
 	sum_char = 0;
 	counter = 0;
 	numeros = 0;
 
-	while (*av != NULL)
+	while (ac != counter)
 	{
 		sum_char += _strlen(*av) + 1;
 		av++;
 		counter++;
 	}
+	av -= counter;
+	counter = 0;
 
 	C = (char *) malloc(sizeof(char) * sum_char);
+
 	if (C == NULL)
 	{
 		return (NULL);
 	}
 
-	av -= counter;
-
-	counter = 0;
-
-	while (counter != ac - 1)
+	while (counter != ac )
 	{
-		for (int j = 0; *(*(av + counter) + j) != '\0'; j++)
+		for (j = 0; *(*(av + counter) + j) != '\0'; j++)
 		{
 			C[numeros] = *(*(av + counter) + j);
 			numeros++;
-			if (numeros == sum_char - 1)
-			{
-				C[numeros] = 0;
-
-			}
-
 		}
+
 		C[numeros] = 10;
 		counter++;
 		numeros++;
