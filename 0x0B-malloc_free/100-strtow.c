@@ -11,9 +11,10 @@
 
 void fill_col(char *str, char **c, int height)
 {
-	int r;
-	int contador = 0;
-	int i = 0;
+	int r, contador, i;
+
+	contador = 0;
+	i = 0;
 
 	for (r = 0; r < height; r++)
 	{ /* correr por rows y llenar cada 1*/
@@ -35,7 +36,6 @@ void fill_col(char *str, char **c, int height)
 			}
 		}
 	}
-	c[r] = NULL;
 }
 
 
@@ -49,11 +49,13 @@ void fill_col(char *str, char **c, int height)
 
 void allocate_col(char *str, char **c, int height)
 {
-	int l;
-	int row_t  = 0;
-	int contador = 0;
+	int l, i, row_t, contador;
 
-	for (int i = 0; str[i] != '\0'; i++)
+	row_t  = 0;
+	contador = 0;
+
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] > 32 && str[i] < 127)
 		{
@@ -66,7 +68,7 @@ void allocate_col(char *str, char **c, int height)
 				/* free*/
 				if (c[row_t] == NULL)
 				{
-					for (l = 0; i < height; l++)
+					for (l = 0; l < height; l++)
 					{
 						free(c[l]);
 					}
@@ -106,6 +108,7 @@ int count_n_string(char *str)
 
 
 	}
+	space++;
 	return (space);
 }
 
@@ -129,14 +132,15 @@ char **strtow(char *str)
 
 
 
-	c = (char **) malloc(sizeof(char *) * height);
+	c = (char **) malloc(sizeof(char *) * (height));
+	c[height - 1] = NULL;
 	if (c == NULL)
 	{
 		return (NULL);
 	}
 
-	allocate_col(str, c, height);
-	fill_col(str, c, height);
+	allocate_col(str, c, height - 1);
+	fill_col(str, c, height - 1);
 
 
 	return (c);
