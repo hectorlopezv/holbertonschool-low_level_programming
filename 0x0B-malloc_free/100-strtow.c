@@ -27,7 +27,6 @@ void fill_col(char *str, char **c, int height)
 
 				if (str[i + 1] == 32)
 				{
-					contador++;/*encontro espacio*/
 					c[r][contador] = '\0';
 					contador = 0;
 					i++;
