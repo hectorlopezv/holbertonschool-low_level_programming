@@ -1,5 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 /**
  *fill_col - fill col
