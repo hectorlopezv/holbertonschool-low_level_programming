@@ -12,18 +12,13 @@
 
 char *argstostr(int ac, char **av)
 {
+	int size, count, count1, count2 = 0;
+	char *ptr;
+
 	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
 	}
-	int  size, counter, numeros, j, count, count1;
-	char *C;
-
-	size = 0;
-	counter = 0;
-	numeros = 0;
-	count1 = 0;
-	count = 0;
 
 	for (count = 0; count < ac; count++)
 	{
@@ -33,34 +28,24 @@ char *argstostr(int ac, char **av)
 		}
 		size += 1;
 	}
-
 	size += 1;
-	C = (char *) malloc(sizeof(char) * size);
 
-	if (C == NULL)
+	ptr = malloc(sizeof(char) * size);
+	if (ptr == NULL)
 	{
+		free(ptr);
 		return (NULL);
 	}
-
-	counter = 0;
-
-	while (counter < ac)
+	for (count = 0; count < ac; count++)
 	{
-		for (j = 0; *(*(av + counter) + j) != '\0'; j++)
+		for (count1 = 0; av[count][count1] != '\0'; count1++)
 		{
-			C[numeros] = *(*(av + counter) + j);
-			numeros++;
-
-
+			ptr[count2] = av[count][count1];
+			count2++;
 		}
-
-		C[numeros] = '\n';
-		counter++;
-		numeros++;
-
+		ptr[count2] = '\n';
+		count2++;
 	}
-	C[numeros] = '\0';
-
-	return (C);
+	ptr[count2] = '\0';
+	return (ptr);
 }
-
