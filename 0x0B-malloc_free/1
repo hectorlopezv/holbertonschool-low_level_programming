@@ -1,40 +1,114 @@
 #include "holberton.h"
 #include <stdlib.h>
 
-/**
- *create_array - create malloc array and fill it with C char
- *@size: size of malloc
- *@c: char with is goign to fill the 1d array
- *Return: NULL or a pointer to the 1d array
- */
+char * str_linker(char *C,char ** av);
+char *str_concat(char *s1, char *s2);
+int _strlen(char *s);
 
-char *create_array(unsigned int size, char c)
+char *argstostr(int ac, char **av)
 {
-	unsigned int i;
-	char *C;
-
-	if (size == 0)
+	if (ac - 1  <= 0 || *(av +1) == NULL)
 	{
 		return (NULL);
 	}
+	av++;;
+	char *C = *av;
 
-	C = (char *) malloc(size);
+	return str_linker(C,av);
+
+
+
+}
+
+char * str_linker(char *C,char ** av)
+{
+	char * C_temp;
+
+
+
+	if ( (C_temp = str_concat(*av, *(av + 1))) == NULL)
+	{
+		free(C_temp);
+		return (NULL);
+	}
+
+	/*printf("%d\n",_strlen (C) );*/
+
+	C_temp = str_concat(C, * (av + 1));
+	av++;
+
+	if (!*av)
+	{
+		return (C);
+	}
+
+	return (str_linker (C_temp,av));
+
+}
+
+char *str_concat(char *s1, char *s2)
+{
+
+	int size_s1, size_s2;
+	int k, counter;
+	char *C;
+
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+
+	size_s1 = _strlen(s1);
+	size_s2 = _strlen(s2);
+
+	C = (char *) malloc(size_s1 + 1 + size_s2 + 1);
 
 	if (C == NULL)
 	{
+		free(C);
 		return (NULL);
 	}
-
-	for (i = 0; i < size; i++)
+	
+	for (k = 0, counter = 0; k < size_s1 ; k++, counter++)
 	{
-
-
-		C[i] = c;
+		C[k] = s1[counter];
 	}
+	C[k] = 10;
+	k++;
 
-	C[i] = 0;
+	for (counter = 0; counter < size_s2; counter++, k++)
+	{
+		C[k] = s2[counter];
+	}
+	C[k] = s2[counter];
 
 	return (C);
+}
 
+
+/**
+ *  *_strlen - legnth of a string
+ *   *@s: string to be evaluated
+ *    *Return: return the legnth without taking into account the nul
+ *     */
+
+int _strlen(char *s)
+{
+
+	int count;
+
+	count = 0;
+
+
+	while (*s != '\0')
+	{
+		s++;/* moving the pointer one index*/
+		count++;
+	}
+	return (count);
 }
 

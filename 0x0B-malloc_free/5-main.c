@@ -18,5 +18,6 @@ int main(int ac, char *av[])
 	}
 	printf("%s", s);
 	free(s);
+
 	return (0);
 }
