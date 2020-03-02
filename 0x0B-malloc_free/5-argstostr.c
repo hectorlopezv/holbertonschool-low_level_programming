@@ -64,24 +64,3 @@ char *argstostr(int ac, char **av)
 	return (C);
 }
 
-/**
- *_strlen - legnth of a string
- *@s: string to be evaluated
- *Return: return the legnth without
- */
-
-int _strlen(char *s)
-{
-
-	int count;
-
-	count = 0;
-
-
-	while (*s != '\0')
-	{
-		s++;
-		count++;
-	}
-	return (count);
-}
