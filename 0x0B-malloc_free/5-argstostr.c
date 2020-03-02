@@ -3,9 +3,6 @@
 #include <stdlib.h>
 
 
-int _strlen(char *s);
-
-
 /**
  *argstostr - use malloc to concatenate
  *@ac: numbers of arguments
@@ -19,23 +16,26 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-	int  sum_char, counter, numeros, j;
+	int  size, counter, numeros, j, count, count1;
 	char *C;
 
-	sum_char = 0;
+	size = 0;
 	counter = 0;
 	numeros = 0;
+	count1 = 0;
+	count = 0;
 
-	while (counter < ac)
+	for (count = 0; count < ac; count++)
 	{
-		sum_char += _strlen(*av) + 1;
-		av++;
-		counter++;
+		for (count1 = 0; av[count][count1] != '\0'; count1++)
+		{
+			size += 1;
+		}
+		size += 1;
 	}
-	av -= counter;
-	sum_char = sum_char + 1;
 
-	C = (char *) malloc(sizeof(char) * sum_char);
+	size += 1;
+	C = (char *) malloc(sizeof(char) * size);
 
 	if (C == NULL)
 	{
