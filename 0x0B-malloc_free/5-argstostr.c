@@ -1,6 +1,6 @@
-#include "holberton.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "holberton.h"
 
 int _strlen(char *s);
 
