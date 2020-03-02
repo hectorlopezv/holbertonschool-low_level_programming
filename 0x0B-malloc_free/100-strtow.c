@@ -1,55 +1,95 @@
-#include <stdio.h>
+#include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 /**
- * free_2d - free a 2d array
- *@grid: 2d pointer simulating a matrix
- *@height: height of the matrix(rows)
- *Return: return the free matrix
- */
+ *fill_col - fill col
+ *@str: string
+ *@c:matrix
+ *@height: rows
+ *Return: som
+ **/
 
-void free_2d(char **grid, int height)
+void fill_col(char *str, char **c, int height)
 {
-	int i;
-
-	for (i = 0; i < height; i++)
-	{
-		free(grid[i]);
-	}
-	free(grid);
-}
-
-/**
- * count_spaces - count_spaces
- *@str: string to be evaluated
- *Return: return the string first string without spaces
- */
-
-int count_spaces(char *str)
-{
-	int contador;
+	int r, contador, i;
 
 	contador = 0;
+	i = 0;
 
-	for (int i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] == 32)
+	for (r = 0; r < height; r++)
+	{ /* correr por rows y llenar cada 1*/
+		for (; str[i] != '\0'; i++)
 		{
-			contador++;
-			if (str[i + 1] > 32 && str[i + 1] < 127)
+			if (str[i] > 32 && str[i] < 127)
 			{
-				break;
+				c[r][contador] = str[i];
+				contador++;
+
+				if (str[i + 1] == 32)
+				{
+					c[r][contador] = '\0';
+					contador = 0;
+					i++;
+					break;
+				}
 			}
 		}
 	}
-	return (contador);
+}
+
+
+/**
+ *allocate_col - allocate in heap col
+ *@str: string
+ *@c: matrix
+ *@height: height
+ *Return: return allocated
+ **/
+
+void allocate_col(char *str, char **c, int height)
+{
+	int l, i, row_t, contador;
+
+	row_t  = 0;
+	contador = 0;
+
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] > 32 && str[i] < 127)
+		{
+			contador++;
+			if (str[i + 1] == 32)
+			{/* llenamos el string*/
+				/* entra row veces*/
+				contador++;/*tenemos el '\0'*/
+				c[row_t] = (char *) malloc(sizeof(char) * contador);
+				/* free*/
+				if (c[row_t] == NULL)
+				{
+					for (l = 0; l < height; l++)
+					{
+						free(c[l]);
+					}
+					free(c);
+				}
+				contador = 0;
+				row_t++;
+			}
+		}
+	}
+
+
+
 }
 
 /**
- * count_n_string - count the number of strings
- *@str: string
- *Return: return number of strings to be splited
- */
+ *count_n_string - count number of characters
+ *@str: string literal
+ *Return: return numbers of characters
+ **/
 
 int count_n_string(char *str)
 {
@@ -69,82 +109,40 @@ int count_n_string(char *str)
 
 
 	}
+	space++;
 	return (space);
 }
 
 /**
- * place_string - count the number of colums of a the splited string
- *@str: string to be explited
- *Return: returned string
- */
-
-int place_string(char *str)
-{
-	int contador;
-
-	contador = 0;
-
-	for (; *str != '\0'; str++)
-	{
-		if (*str > 32 && *str < 127)
-		{
-			contador++;
-			if (*(str + 1) == 32)
-			{
-				break;
-			}
-		}
-	}
-	return (contador);
-}
-
-/**
- * strtow - give a array of splited strings
+ * strtow - split string
  *@str: string to be evaluated
- *Return: return the array of strings
- */
+ *Return: returned string
+ **/
 
 char **strtow(char *str)
 {
-	int rows, i, col, l;
-	char **str_array;
-
-	if (str == NULL || *str == '\0')/* case 1*/
-	{return (NULL);
-	}
-	if (count_n_string(str) == 0)/* case 2 */
-	{return (NULL);
-	}
-	rows = count_n_string(str) + 1;
-	str_array = (char **) malloc(sizeof(char *) * rows);/*alloc for rows*/
-
-	if (str_array == NULL)/* manage exception*/
+	if (str == NULL || *str == '\0')
 	{
 		return (NULL);
 	}
-	str += count_spaces(str);/* move the string to the initial one*/
-	for (i = 0; i < rows - 1; i++)
+
+	int height;
+	char **c;
+
+	height = count_n_string(str);
+
+
+
+	c = (char **) malloc(sizeof(char *) * (height));
+	c[height - 1] = NULL;
+	if (c == NULL)
 	{
-		col = place_string(str) + 1;/* # of char per string*/
-		str_array[i] = (char *) malloc(sizeof(char) * col);
-		if (str_array[i] == NULL)/* free if null*/
-		{
-			free_2d(str_array, rows);
-		}
-		for (l = 0; l < col; l++)/* fill allocated string*/
-		{
-			str_array[i][l] = str[l];
-			if (l  == col - 1)
-			{
-				str_array[i][l] = '\0';
-			}
-		}
-		str += col;
-		if (*str == 32)
-		{
-			str += count_spaces(str);
-		}
+		return (NULL);
 	}
-	str_array[rows] = NULL;
-	return (str_array);
+
+	allocate_col(str, c, height - 1);
+	fill_col(str, c, height - 1);
+
+
+	return (c);
 }
