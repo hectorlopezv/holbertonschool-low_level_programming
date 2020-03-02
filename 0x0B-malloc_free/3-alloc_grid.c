@@ -1,5 +1,8 @@
 #include "holberton.h"
 #include <stdlib.h>
+
+void free_2d(int **grid, int height);
+
 /**
  *alloc_grid - a n x m matrix
  *@width: Columns....
@@ -9,43 +12,51 @@
 
 int **alloc_grid(int width, int height)
 {
-	int i, j;
-	int **C;
+	int i;
+	int **Matrix;
 
-	if (width <= 0 || height <= 0)
+	if (width < 0 || height < 0)
 	{
 		return (NULL);
 	}
-
-	C = (int **) malloc(sizeof(int *) * height);
-	if (C == NULL)
+	if (width == 0 || height == 0)
 	{
-		free(C);
+		return (NULL);
+	}
+	/* pointer to a 1d array*/
+	Matrix = (int **) malloc(sizeof(int *) * height);
+	if (Matrix == NULL)
+	{
 		return (NULL);
 	}
 
 	for (i = 0; i < height; i++)
 	{
-		C[i] = (int *) malloc(sizeof(int) * width);
-		if (C[i] == NULL)
-		{
-			for (i--; i >= 0; i--)
-			{
-				free(C[i]);
-			}
-			free(C);
-			return (NULL);
+		Matrix[i] = (int *) malloc(sizeof(int) * width);
+		if (Matrix[i] == NULL)
+		{/* case where a colum is null erase all*/
+			/* malloc is call #colum times*/
+			free_2d(Matrix, height);
 		}
 	}
 
-	for (i = 0; i < height; i++)
-	{
-		for (j = 0; j < width; j++)
-		{
-			C[i][j] = 0;
-		}
-	}
-
-	return (C);
+	return (Matrix);
 }
 
+/**
+ * free_2d - free a 2d array
+ *@grid: 2d pointer simulating a matrix
+ *@height: height of the matrix(rows)
+ *Return: return the free matrix
+ */
+
+void free_2d(int **grid, int height)
+{
+	int i;
+
+	for (i = 0; i < height; i++)
+	{
+		free(grid[i]);
+	}
+	free(grid);
+}
