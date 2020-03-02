@@ -1,8 +1,15 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "holberton.h"
+#include <stdlib.h>
 
-void fill_col(char * str,char **c,int height)
+/**
+ *fill_col - fill col
+ *@str: string
+ *@c:matrix
+ *@height: rows
+ *Return: som
+ */
+
+void fill_col(char *str, char **c, int height)
 {
 	int r;
 	int contador = 0;
@@ -17,7 +24,7 @@ void fill_col(char * str,char **c,int height)
 				c[r][contador] = str[i];
 				contador++;
 
-				if(str[i + 1] == 32)
+				if (str[i + 1] == 32)
 				{
 					contador++;/*encontro espacio*/
 					c[r][contador] = '\0';
@@ -32,7 +39,15 @@ void fill_col(char * str,char **c,int height)
 }
 
 
-void allocate_col(char * str,char **c,int height)
+/**
+ *allocate_col - allocate in heap col
+ *@str: string
+ *@c: matrix
+ *@height: height
+ *Return: return allocated
+ */
+
+void allocate_col(char *str, char **c, int height)
 {
 	int l;
 	int row_t  = 0;
@@ -43,17 +58,17 @@ void allocate_col(char * str,char **c,int height)
 		if (str[i] > 32 && str[i] < 127)
 		{
 			contador++;
-			if(str[i + 1] == 32)
+			if (str[i + 1] == 32)
 			{/* llenamos el string*/
 				/* entra row veces*/
-				contador++;//tenemos el '\0'
-				c[row_t] = (char *) malloc(sizeof(char) *contador);
+				contador++;/*tenemos el '\0'*/
+				c[row_t] = (char *) malloc(sizeof(char) * contador);
 				/* free*/
 				if (c[row_t] == NULL)
 				{
 					for (l = 0; i < height; l++)
 					{
-						free(c[i]);
+						free(c[l]);
 					}
 					free(c);
 				}
@@ -67,6 +82,12 @@ void allocate_col(char * str,char **c,int height)
 
 }
 
+/**
+ *count_n_string - count number of characters
+ *@str: string literal
+ *Return: return numbers of characters
+ */
+
 int count_n_string(char *str)
 {
 	int space, i;
@@ -75,7 +96,7 @@ int count_n_string(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ( str[i] > 32 && str[i] < 127)
+		if (str[i] > 32 && str[i] < 127)
 		{
 			if (str[i + 1] == 32)
 			{
@@ -88,6 +109,11 @@ int count_n_string(char *str)
 	return (space);
 }
 
+/**
+ * strtow - split string
+ *@str: string to be evaluated
+ *Return: returned string
+ */
 
 char **strtow(char *str)
 {
@@ -97,19 +123,20 @@ char **strtow(char *str)
 	}
 
 	int height;
+	char **c;
 
 	height = count_n_string(str);
-	char **c ;
 
 
-	c = (char **)malloc(sizeof(char *) * (height ));
+
+	c = (char **) malloc(sizeof(char *) * height);
 	if (c == NULL)
 	{
 		return (NULL);
 	}
 
-	allocate_col(str,c,height);
-	fill_col(str,c,height);
+	allocate_col(str, c, height);
+	fill_col(str, c, height);
 
 
 	return (c);
