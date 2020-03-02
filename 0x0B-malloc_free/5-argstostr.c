@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-
 int _strlen(char *s);
 
 /**
@@ -12,7 +11,7 @@ int _strlen(char *s);
 
 char *argstostr(int ac, char **av)
 {
-	if (ac == 0 || *av  == NULL)
+	if (ac == 0 || av  == NULL)
 	{
 		return (NULL);
 	}
