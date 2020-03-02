@@ -7,7 +7,7 @@
  *@c:matrix
  *@height: rows
  *Return: som
- */
+ **/
 
 void fill_col(char *str, char **c, int height)
 {
@@ -45,7 +45,7 @@ void fill_col(char *str, char **c, int height)
  *@c: matrix
  *@height: height
  *Return: return allocated
- */
+ **/
 
 void allocate_col(char *str, char **c, int height)
 {
@@ -86,7 +86,7 @@ void allocate_col(char *str, char **c, int height)
  *count_n_string - count number of characters
  *@str: string literal
  *Return: return numbers of characters
- */
+ **/
 
 int count_n_string(char *str)
 {
@@ -113,7 +113,7 @@ int count_n_string(char *str)
  * strtow - split string
  *@str: string to be evaluated
  *Return: returned string
- */
+ **/
 
 char **strtow(char *str)
 {
