@@ -101,7 +101,7 @@ int count_n_string(char *str)
 	{
 		if (str[i] > 32 && str[i] < 127)
 		{
-			if (str[i + 1] == 32)
+			if (str[i + 1] == 32 || str[i + 1] == '\0')
 			{
 				space++;
 			}
