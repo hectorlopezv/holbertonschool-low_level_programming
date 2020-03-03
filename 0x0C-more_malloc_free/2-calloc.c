@@ -17,7 +17,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 
 	char *array_1d;
-	int i;
+	unsigned int i;
 
 	array_1d = malloc(size * nmemb);
 	if (array_1d == NULL)
