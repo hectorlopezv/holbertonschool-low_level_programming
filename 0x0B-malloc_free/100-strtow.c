@@ -132,7 +132,7 @@ char **strtow(char *str)
 	str += count_spaces(str);/* move the string to the initial one*/
 	for (i = 0; i < rows - 1; i++)
 	{
-		col = place_string(str) + 1;/* # of char per string*/
+		col = place_string(str) + 2;/* # of char per string*/
 		str_array[i] = (char *) malloc(sizeof(char) * col);
 		if (str_array[i] == NULL)/* free if null*/
 		{
