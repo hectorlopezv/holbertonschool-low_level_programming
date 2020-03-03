@@ -92,6 +92,7 @@ int main(int argc, char *argv[])
 	{
 		printf("%d", str[l]);
 	}
+	putchar('\n');
 	free(str);
 }
 
