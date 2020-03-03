@@ -6,7 +6,7 @@
 /**
  * _realloc - reallocate memory
  *@ptr: pointer to resize
- *@old size: old size of array
+ *@old_size: old size of array
  *@new_size: new size of array
  *Return: return the pointer resized
  */
