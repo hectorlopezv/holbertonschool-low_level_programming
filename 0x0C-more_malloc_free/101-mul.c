@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
 	l = 0;
 	if (argc != 3)
-	{	printf("Error");
+	{	printf("Error\n");
 		exit(98);
 	}
 	if (checkif_num(argv[1]) == 0 || checkif_num(argv[2]) == 0)
