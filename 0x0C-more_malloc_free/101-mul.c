@@ -3,54 +3,16 @@
 #include "holberton.h"
 #include <string.h>
 
-/**
- *checkif_num - k
- *@s:string
- *Return: return legnth
- */
+int checkif_num(char *s);
+int size_str(char *s);
 
-int checkif_num(char *s)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (s[i] < 48 || s[i] > 57)
-		{
-
-			return (0);
-		}
-
-	}
-
-	return (1);
-
-
-}
 
 /**
- *size_str -  size
- *@s:string
- *Return: return size
- */
-
-int size_str(char *s)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-
-	}
-
-	return (i);
-}
-
-/**
- *main - main argc and argv
- *@argc: number of arguments
- *@argv: array of string
- *Return: return printed multiplication
+ * main - multiple two positive numbers, it takes two arg
+ * @argc: argument count
+ * @argv: number to multiply
+ * prints out num
+ * Return: 0
  */
 
 int main(int argc, char *argv[])
@@ -99,5 +61,48 @@ int main(int argc, char *argv[])
 	}
 	putchar('\n');
 	free(str);
+}
+
+/**
+ *checkif_num - k
+ *@s:string
+ *Return: return legnth
+ */
+
+int checkif_num(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] < 48 || s[i] > 57)
+		{
+
+			return (0);
+		}
+
+	}
+
+	return (1);
+
+
+}
+
+/**
+ *size_str -  size
+ *@s:string
+ *Return: return size
+ */
+
+int size_str(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+
+	}
+
+	return (i);
 }
 
