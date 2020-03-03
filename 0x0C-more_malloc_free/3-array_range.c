@@ -27,12 +27,10 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
-	for (i = 0; min < max; i++)
+	for (i = 0; min <=max; i++)
 	{
 		array_int[i] = min;
 		min = min + 1;
-
-
 	}
 
 	return (array_int);
