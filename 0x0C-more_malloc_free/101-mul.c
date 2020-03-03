@@ -17,7 +17,9 @@ int main(int argc, char *argv[])
 {
 	int s1_size, s2_size, i, j, d2, d1, n, l;
 	int *str;
+	int contador;
 
+	contador = 0;
 	l = 0;
 	if (argc != 3)
 	{	printf("Error\n");
@@ -56,8 +58,26 @@ int main(int argc, char *argv[])
 			str[i - 1] += d2;
 		}
 	}
+	for (l = 0; l < s1_size + s2_size; l++)
+	{
+		if (str[l] == 0)
+		{
+			contador++;
+		}
+
+	}
+	if (contador == s1_size + s2_size)
+	{
+		printf("0\n");
+		free(str);
+		return(0);
+	}
 	if (str[0] == 0)
 	{	l = 1;
+	}
+	else
+	{
+		l = 0;
 	}
 	for (; l < s1_size + s2_size; l++)
 	{
