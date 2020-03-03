@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 	{
 		printf("0\n");
 		free(str);
-		return(0);
+		return (0);
 	}
 	if (str[0] == 0)
 	{	l = 1;
