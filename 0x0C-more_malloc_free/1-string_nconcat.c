@@ -15,11 +15,11 @@ int _strlen(char *s)
 	int count;
 
 	count = 0;
-	while (*s != '\0')
+	for (; s[count] != '\0'; count++)
 	{
-		s++;/* moving the pointer one index*/
-		count++;
+
 	}
+
 	return (count);
 }
 
