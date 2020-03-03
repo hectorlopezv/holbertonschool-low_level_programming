@@ -40,11 +40,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *C;
 
 	size_s1 = _strlen(s1);
-	size_s2 = _strlen(s2);
+	size_s2 = _strlen(s2) + 1;
 	if (s1 == NULL)
 	{
 		s1 = "";
-		size_s1 = 1;
 	}
 	if (s2 == NULL)
 	{
@@ -55,7 +54,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		n = size_s2;
 	}
-	C = (char *) malloc(size_s1 + size_s2 + 2);
+	C = (char *) malloc(size_s1 + size_s2);
 	if (C == NULL)
 	{
 		return (NULL);
