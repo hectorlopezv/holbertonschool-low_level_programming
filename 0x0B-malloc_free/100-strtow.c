@@ -121,13 +121,15 @@ int count_n_string(char *str)
 
 char **strtow(char *str)
 {
+	int height;
+	char **c;
+
+
 	if (str == NULL || *str == '\0')
 	{
 		return (NULL);
 	}
 
-	int height;
-	char **c;
 
 	height = count_n_string(str);
 
