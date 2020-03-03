@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 	int s1_size, s2_size, i, j, d2, d1, n, l;
 	int *str;
 
+	l = 0;
 	if (argc < 3 || argc > 3)
 	{	printf("Error");
 		exit(98);
@@ -30,7 +31,12 @@ int main(int argc, char *argv[])
 	}
 	s1_size = size_str(argv[1]);
 	s2_size = size_str(argv[2]);
-	str = calloc(s2_size + s1_size, sizeof(int));
+	str = calloc(s2_size + s1_size, sizeof(int *));
+	if (str == NULL)
+	{
+		printf("Error\n");
+		exit(98);
+	}
 	for (j = s2_size - 1; j >= 0; --j)
 	{
 		for (i = s1_size - 1; i >= 0; --i)
@@ -61,6 +67,7 @@ int main(int argc, char *argv[])
 	}
 	putchar('\n');
 	free(str);
+	return (0);
 }
 
 /**
