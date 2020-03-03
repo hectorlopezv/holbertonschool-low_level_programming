@@ -39,29 +39,27 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int k, counter;
 	char *C;
 
+	size_s1 = _strlen(s1);
+	size_s2 = _strlen(s2);
 	if (s1 == NULL)
 	{
 		s1 = "";
+		size_s1 = 1;
 	}
 	if (s2 == NULL)
 	{
 		s2 = "";
+		size_s2 = 1;
 	}
-	size_s1 = _strlen(s1);
-	size_s2 = _strlen(s2);
-
 	if (n >= size_s2)
 	{
 		n = size_s2;
 	}
-
-	C = (char *) malloc(size_s1 + size_s2 + 2);
-
+	C = (char *) malloc(size_s1 + size_s2 + 1);
 	if (C == NULL)
 	{
 		return (NULL);
 	}
-
 	for (k = 0, counter = 0; s1[counter] != '\0'; k++, counter++)
 	{
 		C[k] = s1[counter];
