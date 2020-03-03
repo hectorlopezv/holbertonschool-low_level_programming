@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	if (checkif_num(argv[1]) == 0 || checkif_num(argv[2]) == 0)
-	{	printf("Error\n");
+	{	printf("Error");
 		exit(98);
 	}
 	s1_size = size_str(argv[1]);
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	str = calloc(s2_size + s1_size, sizeof(int *));
 	if (str == NULL)
 	{
-		printf("Error\n");
+		printf("Error");
 		exit(98);
 	}
 	for (j = s2_size - 1; j >= 0; --j)
