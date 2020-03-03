@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "holberton.h"
-#include <string.h>
 
 int checkif_num(char *s);
 int size_str(char *s);
-
 
 /**
  * main - multiple two positive numbers, it takes two arg
@@ -50,7 +48,7 @@ int main(int argc, char *argv[])
 	}
 	for (i = s1_size + s2_size - 1; i >= 0; --i)
 	{
-		d2 = str[i] > 9 ? str[i] /10 : 0;
+		d2 = str[i] > 9 ? str[i] / 10 : 0;
 		d1 = str[i] % 10;
 		str[i] = d1;
 		if (i != 0)
