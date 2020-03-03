@@ -38,6 +38,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int size_s1, size_s2;
 	unsigned int k, counter;
 	char *C;
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
 
 	if (s2 == NULL)
 	{
