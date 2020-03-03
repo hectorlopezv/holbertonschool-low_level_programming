@@ -82,10 +82,13 @@ int main(int argc, char *argv[])
 	}
 	for (i = s1_size + s2_size - 1; i >= 0; --i)
 	{
-		d2 = str[i] / 10;
+		d2 = str[i] > 9 ? str[i] /10 : 0;
 		d1 = str[i] % 10;
 		str[i] = d1;
-		str[i - 1] += d2;
+		if (i != 0)
+		{
+			str[i - 1] += d2;
+		}
 	}
 	if (str[0] == 0)
 	{	l = 1;
