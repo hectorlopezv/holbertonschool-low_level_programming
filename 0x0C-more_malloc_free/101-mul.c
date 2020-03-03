@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 	{
 		printf("%d", str[l]);
 	}
-	putchar('\n');
+	printf("\n");
 	free(str);
 	return (0);
 }
