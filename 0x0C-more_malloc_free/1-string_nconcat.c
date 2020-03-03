@@ -39,8 +39,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int k, counter1;
 	char *C;
 
-	size_s1 = _strlen(s1);
-	size_s2 = _strlen(s2);
 
 	if (s1 == NULL)
 	{
@@ -50,6 +48,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s2 = "";
 	}
+	size_s1 = _strlen(s1);
+	size_s2 = _strlen(s2);
 	if (n >= size_s2)
 	{
 		n = size_s2;
@@ -64,12 +64,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		return (NULL);
 	}
-
 	for (k = 0; k < size_s1; k++)
 	{
 		C[k] = s1[k];
 	}
-
 	for (counter1 = 0; counter1 < n; counter1++)
 	{
 		C[k++] = s2[counter1];
