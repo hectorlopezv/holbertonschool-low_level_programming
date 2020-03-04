@@ -29,11 +29,11 @@ void free_2d(char **grid, int height)
 
 int count_spaces(char *str)
 {
-	int contador;
+	int contador, i;
 
 	contador = 0;
 
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i + 1] > 32 && str[i + 1] < 127)
 		{
