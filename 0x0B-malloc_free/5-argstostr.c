@@ -13,12 +13,10 @@ int _strlen(char *s);
 
 char *argstostr(int ac, char **av)
 {
-        if (ac - 1  <= 0 || *(av + 1) == NULL)
+        if (ac == 0 || av == NULL)
         {
                 return (NULL);
         }
-
-        av++;
         int  sum_char, counter, numeros;
         char *C;
 
@@ -33,7 +31,7 @@ char *argstostr(int ac, char **av)
                 counter++;
         }
 
-        C = (char *) malloc(sizeof(char) * sum_char);
+        C = (char *) malloc(sum_char);
         if (C == NULL)
         {
                 return (NULL);
