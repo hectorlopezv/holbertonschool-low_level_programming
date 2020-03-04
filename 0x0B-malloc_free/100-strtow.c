@@ -35,11 +35,8 @@ int count_spaces(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i + 1] > 32 && str[i + 1] < 127)
-		{
-			break;
-		}
-		contador++;
+
+
 
 		if (str[i] == 32)
 		{
@@ -48,6 +45,11 @@ int count_spaces(char *str)
 			{
 				break;
 			}
+		}
+
+		if (str[i + 1] > 32 && str[i + 1] < 127)
+		{
+			break;
 		}
 	}
 	return (contador);
@@ -95,7 +97,7 @@ int place_string(char *str)
 	for (; *str != '\0'; str++)
 	{
 		if (*str > 32 && *str < 127)
-		{	contador++;
+		{       contador++;
 			if (*(str + 1) == 32)
 			{
 				break;
@@ -123,13 +125,14 @@ char **strtow(char *str)
 	if (count_n_string(str) == 0)/* case 2 */
 	{return (NULL);
 	}
+	str += count_spaces(str);/* move the string to the initial one*/
 	rows = count_n_string(str) + 1;
 	str_array = malloc(sizeof(char *) * rows);/*alloc for rows*/
 	if (str_array == NULL)/* manage exception*/
 	{
 		return (NULL);
 	}
-	str += count_spaces(str);/* move the string to the initial one*/
+
 	for (i = 0; i < rows - 1; i++)
 	{
 		col = place_string(str) + 1;/* # of char per string*/
@@ -155,3 +158,4 @@ char **strtow(char *str)
 	str_array[rows] = NULL;
 	return (str_array);
 }
+
