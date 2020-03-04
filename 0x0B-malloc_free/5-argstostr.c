@@ -29,10 +29,14 @@ char *argstostr(int ac, char **av)
                 av++;
                 counter++;
         }
+        sum_char=sum_char + 1;
+        
+        printf("%d",sum_char);
 
-        C = (char *) malloc(sum_char);
+        C = malloc(sum_char);
         if (C == NULL)
         {
+                free(C);
                 return (NULL);
         }
 
@@ -40,24 +44,22 @@ char *argstostr(int ac, char **av)
 
         counter = 0;
 
-        while (counter != ac - 1)
+        while (counter < ac)
         {
                 for (int j = 0; *(*(av + counter) + j) != '\0'; j++)
                 {
                         C[numeros] = *(*(av + counter) + j);
                         numeros++;
-                        if (numeros == sum_char - 1)
-                        {
-                                C[numeros] = 0;
-
-                        }
+          
 
                 }
+                
                 C[numeros] = 10;
                 counter++;
                 numeros++;
 
         }
+         C[numeros] = 0;
 
         return (C);
 }
