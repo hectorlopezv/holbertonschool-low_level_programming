@@ -109,7 +109,7 @@ int place_string(char *str)
 }
 
 /**
- * strtow - give a array of splited strings
+ *strtow - give a array of splited strings
  *@str: string to be evaluated
  *Return: return the array of strings
  */
@@ -132,7 +132,6 @@ char **strtow(char *str)
 	{
 		return (NULL);
 	}
-
 	for (i = 0; i < rows - 1; i++)
 	{
 		col = place_string(str) + 1;/* # of char per string*/
