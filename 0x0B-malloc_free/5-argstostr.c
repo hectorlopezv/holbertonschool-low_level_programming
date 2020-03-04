@@ -15,12 +15,14 @@ char *argstostr(int ac, char **av)
         {
                 return (NULL);
         }
-        int  sum_char, count1, count2, counter, numeros;
+        int  sum_char, count, count1, counter, numeros;
         char *C;
 
         sum_char = 0;
         counter = 0;
         numeros = 0;
+	count1 = 0;
+	count = 0;
 
         /*while (counter < ac)*/
         /*{*/
