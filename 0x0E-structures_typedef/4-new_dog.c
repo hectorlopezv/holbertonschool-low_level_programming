@@ -35,6 +35,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	std->name = malloc(i);
 	if (std->name == NULL)
 	{
+		free(std);
+		free(owner);
 		return (NULL);
 	}
 	_strcpy(std->name, name);
@@ -42,6 +44,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	std->owner = malloc(j);
 	if (std->owner == NULL)
 	{
+		free(std);
+		free(name);
 		return (NULL);
 	}
 	_strcpy(std->owner, owner);
