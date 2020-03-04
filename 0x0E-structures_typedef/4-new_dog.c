@@ -36,7 +36,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (std->name == NULL)
 	{
 		free(std);
-		free(owner);
+		free(std->owner);
 		return (NULL);
 	}
 	_strcpy(std->name, name);
@@ -45,7 +45,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (std->owner == NULL)
 	{
 		free(std);
-		free(name);
+		free(std->name);
 		return (NULL);
 	}
 	_strcpy(std->owner, owner);
