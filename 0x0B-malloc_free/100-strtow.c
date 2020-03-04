@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * free_2d: free 2d matrix
+ *free_2d -  free 2d matrix
  *@grid: matrix
  *@height: the height
  *Return: return matrix
