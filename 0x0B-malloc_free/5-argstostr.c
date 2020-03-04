@@ -1,84 +1,53 @@
-#include <stdlib.h>
-#include <stdio.h>
+1 lines (43 sloc)  699 Bytes
+  
 #include "holberton.h"
-
-int _strlen(char *s);
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- *argstostr - use malloc to concatenate string of variable legnth
- *@ac: numbers of arguments
- *@av : array of arguments
- *Return: pointer containing all concatenated strings with a new line
+ * argstostr - concatenates all the arguments of your program
+ * @ac: int type Integer
+ * @av: Double Pointer
+ * Return: Pointer p
  */
 
 char *argstostr(int ac, char **av)
 {
-	if (ac == 0 || av  == NULL)
+	int i, j;
+	int str = 0;
+	int a = 0;
+	char *p;
+
+	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
 	}
 
-
-
-	int  sum_char, counter, numeros, j;
-	char *C;
-
-	sum_char = 0;
-	counter = 0;
-	numeros = 0;
-
-	while (ac != counter)
+	for (i = 0; i < ac; i++)
 	{
-		sum_char += _strlen(*av) + 1;
-		av++;
-		counter++;
-	}
-	av -= counter;
-	counter = 0;
 
-	C = (char *) malloc(sizeof(char) * sum_char);
-
-	if (C == NULL)
-	{
-		return (NULL);
-	}
-
-	while (counter != ac)
-	{
-		for (j = 0; *(*(av + counter) + j) != '\0'; j++)
+		for (j = 0; av[i][j]; j++)
 		{
-			C[numeros] = *(*(av + counter) + j);
-			numeros++;
+			str++;
 		}
-
-		C[numeros] = 10;
-		counter++;
-		numeros++;
-
 	}
 
-	return (C);
-}
-
-
-/**
- *_strlen - legnth of a string
- *@s: string to be evaluated
- *Return: return the legnth without taking into account the nul
- */
-
-int _strlen(char *s)
-{
-
-	int count;
-
-	count = 0;
-
-
-	while (*s != '\0')
+	p = malloc(sizeof(char) * (str + ac + 1));
+	if (p == NULL)
 	{
-		s++;/* moving the pointer one index*/
-		count++;
+		return (NULL);
 	}
-	return (count);
+
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j]; j++)
+		{
+			p[a] = av[i][j]; /*p = av[][]*/
+			a++; /*the variable starts at 0 and increases 1*/
+	}
+		p[a] = '\n';
+		a++;
+	}
+
+	return (p);
 }
