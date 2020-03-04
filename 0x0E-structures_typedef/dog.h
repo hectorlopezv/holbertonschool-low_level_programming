@@ -3,6 +3,9 @@
 
 /**
  *dog - struct containing name,age,owner of a dog
+ *@name: name of the dog
+ *@age: age of the dog
+ *@owner: owner of the dog
  *Return: struct of a dog
  */
 
