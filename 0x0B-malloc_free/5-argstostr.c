@@ -2,50 +2,88 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int _strlen(char *s);
+
 /**
- * argstostr - concatenates all the arguments of your program
- * @ac: int type Integer
- * @av: Double Pointer
- * Return: Pointer p
+ *argstostr - use malloc to concatenate string of variable legnth
+ *@ac: numbers of arguments
+ *@av : array of arguments
+ *Return: pointer containing all concatenated strings with a new line
  */
 
 char *argstostr(int ac, char **av)
 {
-	int i, j;
-	int str = 0;
-	int a = 0;
-	char *p;
+        if (ac - 1  <= 0 || *(av + 1) == NULL)
+        {
+                return (NULL);
+        }
 
-	if (ac == 0 || av == NULL)
-	{
-		return (NULL);
-	}
+        av++;
+        int  sum_char, counter, numeros;
+        char *C;
 
-	for (i = 0; i < ac; i++)
-	{
+        sum_char = 0;
+        counter = 0;
+        numeros = 0;
 
-		for (j = 0; av[i][j]; j++)
-		{
-			str++;
-		}
-	}
+        while (*av != NULL)
+        {
+                sum_char += _strlen(*av) + 1;
+                av++;
+                counter++;
+        }
 
-	p = malloc(sizeof(char) * (str + ac + 1));
-	if (p == NULL)
-	{
-		return (NULL);
-	}
+        C = (char *) malloc(sizeof(char) * sum_char);
+        if (C == NULL)
+        {
+                return (NULL);
+        }
 
-	for (i = 0; i < ac; i++)
-	{
-		for (j = 0; av[i][j]; j++)
-		{
-			p[a] = av[i][j]; /*p = av[][]*/
-			a++; /*the variable starts at 0 and increases 1*/
-	}
-		p[a] = '\n';
-		a++;
-	}
+        av -= counter;
 
-	return (p);
+        counter = 0;
+
+        while (counter != ac - 1)
+        {
+                for (int j = 0; *(*(av + counter) + j) != '\0'; j++)
+                {
+                        C[numeros] = *(*(av + counter) + j);
+                        numeros++;
+                        if (numeros == sum_char - 1)
+                        {
+                                C[numeros] = 0;
+
+                        }
+
+                }
+                C[numeros] = 10;
+                counter++;
+                numeros++;
+
+        }
+
+        return (C);
+}
+
+
+/**
+ *_strlen - legnth of a string
+ *@s: string to be evaluated
+ *Return: return the legnth without taking into account the nul
+ */
+
+int _strlen(char *s)
+{
+
+        int count;
+
+        count = 0;
+
+
+        while (*s != '\0')
+        {
+                s++;/* moving the pointer one index*/
+                count++;
+        }
+        return (count);
 }
