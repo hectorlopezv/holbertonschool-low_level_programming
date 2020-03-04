@@ -2,21 +2,23 @@
 #include <stdio.h>
 
 /**
- * dog_t - creates a dog struct
+ * new_dog - creates a dog struct
  *@name: name
- *@age:
- *@owner:
+ *@age: age
+ *@owner: owner
  *Return: return a struct
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog st;
-	struct dog *std;
+	dog_t st;
+	dog_t *std;
+
 	std = &st;
 
-	std -> name = name;
-	std -> age = age;
-	std -> owner = owner;
+	std->name = name;
+	std->age = age;
+	std->owner = owner;
+
 	return (std);
 }
