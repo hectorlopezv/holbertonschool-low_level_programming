@@ -38,7 +38,7 @@ char *argstostr(int ac, char **av)
 	{
 		for (count1 = 0; av[count][count1] != '\0'; count1++)
 		{
-			size += 1;
+			sum_char += 1;
 		}
 		sum_char += 1;
 	}
