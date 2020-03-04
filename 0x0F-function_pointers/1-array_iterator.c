@@ -4,6 +4,7 @@
  * array_iterator -  array printer
  *@size: size of the array
  *@action: is a function_pointers
+ *@array: array of integers
  *Return: return the print of array in stdio
  */
 
