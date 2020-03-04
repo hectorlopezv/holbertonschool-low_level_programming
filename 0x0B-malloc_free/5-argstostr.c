@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int _strlen(char *s);
 
 /**
  *argstostr - use malloc to concatenate string of variable legnth
