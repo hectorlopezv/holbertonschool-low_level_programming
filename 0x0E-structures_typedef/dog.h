@@ -1,6 +1,3 @@
-#ifndef DOG_H
-#define DOG_H
-
 /**
  *dog - struct containing name,age,owner of a dog
  *@name: name of the dog
@@ -8,6 +5,9 @@
  *@owner: owner of the dog
  *Return: struct of a dog
  */
+
+#ifndef DOG_H
+#define DOG_H
 
 struct dog
 {
