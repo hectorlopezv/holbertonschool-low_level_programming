@@ -3,6 +3,8 @@
 #include <stdlib.h>
 
 
+int _strlen(char *s);
+
 /**
  *argstostr - use malloc to concatenate string of variable legnth
  *@ac: numbers of arguments
@@ -29,7 +31,7 @@ char *argstostr(int ac, char **av)
                 av++;
                 counter++;
         }
-        sum_char=sum_char + 1;
+        sum_char = sum_char + 1;
         
         printf("%d",sum_char);
 
