@@ -69,7 +69,7 @@ char *argstostr(int ac, char **av)
                 numeros++;
 
         }
-         C[numeros] = 0;
+         C[numeros] = '\0';
 
         return (C);
 }
