@@ -23,7 +23,7 @@ char *argstostr(int ac, char **av)
         counter = 0;
         numeros = 0;
 
-        while (*av != NULL)
+        while (counter < ac)
         {
                 sum_char += _strlen(*av) + 1;
                 av++;
@@ -54,7 +54,7 @@ char *argstostr(int ac, char **av)
 
                 }
                 
-                C[numeros] = 10;
+                C[numeros] = '\n';
                 counter++;
                 numeros++;
 
