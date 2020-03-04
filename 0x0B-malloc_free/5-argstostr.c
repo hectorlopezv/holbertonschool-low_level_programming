@@ -1,5 +1,3 @@
-1 lines (43 sloc)  699 Bytes
-  
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
