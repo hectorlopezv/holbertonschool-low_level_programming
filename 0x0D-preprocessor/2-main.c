@@ -5,7 +5,7 @@
  *Return: return the current input file
  */
 
-int main()
+int main(void)
 {
-	printf("%s\n",__FILE__);
+	printf("%s\n", __FILE__);
 }
