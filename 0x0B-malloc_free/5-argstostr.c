@@ -2,9 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-int _strlen(char *s);
-
 /**
  *argstostr - use malloc to concatenate string of variable legnth
  *@ac: numbers of arguments
@@ -18,31 +15,40 @@ char *argstostr(int ac, char **av)
         {
                 return (NULL);
         }
-        int  sum_char, counter, numeros;
+        int  sum_char, count1, count2, counter, numeros;
         char *C;
 
         sum_char = 0;
         counter = 0;
         numeros = 0;
 
-        while (counter < ac)
-        {
-                sum_char += _strlen(*av) + 1;
-                av++;
-                counter++;
-        }
-        sum_char = sum_char + 1;
+        /*while (counter < ac)*/
+        /*{*/
+             /*   sum_char += _strlen(*av) + 1;*/
+                /*av++;*/
+                /*counter++;*/
+        /*}*/
+        /*sum_char = sum_char + 1;*/
         
-        printf("%d",sum_char);
-
+        /*printf("%d",sum_char);*/
+        
+        for (count = 0; count < ac; count++)
+	{
+		for (count1 = 0; av[count][count1] != '\0'; count1++)
+		{
+			size += 1;
+		}
+		sum_char += 1;
+	}
+	sum_char += 1;
+        
         C = malloc(sum_char);
+        
         if (C == NULL)
         {
                 free(C);
                 return (NULL);
         }
-
-        av -= counter;
 
         counter = 0;
 
@@ -64,27 +70,4 @@ char *argstostr(int ac, char **av)
          C[numeros] = 0;
 
         return (C);
-}
-
-
-/**
- *_strlen - legnth of a string
- *@s: string to be evaluated
- *Return: return the legnth without taking into account the nul
- */
-
-int _strlen(char *s)
-{
-
-        int count;
-
-        count = 0;
-
-
-        while (*s != '\0')
-        {
-                s++;/* moving the pointer one index*/
-                count++;
-        }
-        return (count);
 }
