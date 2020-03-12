@@ -2,14 +2,13 @@
 #include <string.h>
 
 /**
- *get_op_func - return a pointer to a certain function
- *@s: character that is going to be used the switch
- *Return: return the function
+ * get_op_func - selects the correct operation toperform
+ * @s: operation to perform
+ *
+ * Return: pointer to the correct function
  */
-
 int (*get_op_func(char *s))(int, int)
 {
-
 	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
@@ -21,16 +20,11 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 
 	i = 0;
-
 	while (ops[i].op != NULL)
 	{
 		if (strcmp(s, ops[i].op) == 0)
-		{
 			break;
-
-		}
 		i++;
-
 	}
 	return (ops[i].f);
 }
