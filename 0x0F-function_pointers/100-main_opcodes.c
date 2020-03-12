@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 	/*printf("0x%08x\n",f);*/
 
-	for (i = 0; i < number_bytes; i++, start++)
+	for (i = 0; i < number_bytes; i++)
 	{
 		
 				      
