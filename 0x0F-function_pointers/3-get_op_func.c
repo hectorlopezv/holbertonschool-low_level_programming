@@ -21,12 +21,15 @@ int (*get_op_func(char *s))(int, int)
 
 	i = 0;
 
-	while (ops[i].op != NULL)
+	while (i < 5)
 	{
 		if (strcmp(s, ops[i].op) == 0)
-			break;
+		{
+			return (ops[i].f);
+
+		}
 		i++;
 	}
-	return (ops[i].f);
+	return (NULL);
 }
 

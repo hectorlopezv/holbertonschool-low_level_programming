@@ -11,23 +11,22 @@
  */
 int main(int argc, char *argv[])
 {
-	int a, b, c;
-	int (*f)(int, int);
+	int (*res)(int, int);
+	int resul;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-	f = get_op_func(argv[2]);
-	if (f == NULL)
+
+	res = get_op_func(argv[2]);
+	if (res == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	c = f(a, b);
-	printf("%d\n", c);
+	resul = res(atoi(argv[1]), atoi(argv[3]));
+	printf("%d\n", resul);
 	return (0);
 }
