@@ -29,10 +29,8 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < number_bytes; i++, start++)
 	{
-		if (i==number_bytes-1){
-			printf("%02hhx",start[i]);
-			break;
-				      }
+		
+				      
 		printf("%02hhx ", start[i]);
 		
 	}
