@@ -32,13 +32,13 @@ int main(int argc, char *argv[])
 		if (i == number_bytes - 1)
 		{
 			
-			printf("%.2hhx", start[i]);
+			printf("%02x", start[i]);
 			continue;
 			
 		
 		}
 				      
-		printf("%.2hhx ", start[i]);
+		printf("%02x ", start[i]);
 		
 		
 	}
