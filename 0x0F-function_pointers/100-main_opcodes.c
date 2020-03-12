@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ *main - main to print n bytes of pointer of addres
+ *@argc: number of arguments
+ *@argv: string of strings
+ *Return: nothing
+ */
+
 int main(int argc, char *argv[])
 {
 	int number_bytes, i;
@@ -22,7 +29,8 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < number_bytes; i++)
 	{
-		printf("%x\n", start[i]);
+		printf("%x ", start[i]);
 	}
+	printf("\n");
 
 }
