@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 	number_bytes = atoi(argv[1]);
-	if (number_bytes <= 0)
+	if (number_bytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
