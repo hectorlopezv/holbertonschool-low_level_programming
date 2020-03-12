@@ -10,7 +10,7 @@ int (*get_op_func(char *s))(int, int)
 {
 	int i;
 
-	if ( s == NULL)
+	if (s == NULL)
 	{
 		return (NULL);
 	}
