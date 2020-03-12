@@ -17,14 +17,15 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_start(args, n);
 
-	if (separator == NULL)
-	{
-		separator = "";
-	}
 	if (n <= 0)
 	{
 		printf("\n");
 		return;
+	}
+
+	if (separator == NULL)
+	{
+		separator = "";
 	}
 	p_temp = va_arg(args, char *);
 	if (p_temp == NULL)
@@ -42,7 +43,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		if (p_temp == NULL)
 		{
-			printf("%s", "(nil)");
+			printf("%s%s", separator, "(nil)");
 		}
 		else
 		{
