@@ -27,9 +27,9 @@ int main(int argc, char *argv[])
 
 	/*printf("0x%08x\n",f);*/
 
-	for (i = 0; i < number_bytes; i++)
+	for (i = 0; i < number_bytes; i++, start++)
 	{
-		printf("%02x ", start[i]);
+		printf("%02x ", *start);
 	}
 	printf("\n");
 
