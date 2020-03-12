@@ -22,7 +22,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		printf("\n");
 		return;
 	}
-
 	if (separator == NULL)
 	{
 		separator = "";
@@ -36,7 +35,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		printf("%s", p_temp);
 	}
-
 	for (i = 0; i < n - 1; i++)
 	{
 		p_temp = va_arg(args, char *);
