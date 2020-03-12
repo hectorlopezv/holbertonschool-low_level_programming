@@ -29,7 +29,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		return;
 	}
 
-	for (i = 0; i < n - 1; i++)
+	for (i = 0; i < n; i++)
 	{
 		if (i == 0)
 		{
