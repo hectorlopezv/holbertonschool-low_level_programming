@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < number_bytes; i++, start++)
 	{
-		printf("%02x ", *start);
+		printf("%02hhx ", *start);
 	}
 	printf("\n");
 
