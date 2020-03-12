@@ -31,16 +31,14 @@ int main(int argc, char *argv[])
 	{
 		if (i == number_bytes - 1)
 		{
-			
 			printf("%02x", start[i]);
 			continue;
-			
-		
+
+
 		}
-				      
 		printf("%02x ", start[i]);
-		
-		
+
+
 	}
 	printf("\n");
 	return (0);
