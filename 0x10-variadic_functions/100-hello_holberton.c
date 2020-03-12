@@ -1,7 +1,8 @@
 #include <unistd.h>
+#include <stdio.h>
 
-int main (void)
+int main(void)
 {
-	write(1,"Hello, Holberton",16);
+	syscall(1, 0, "Hello, Holberton\n",16);
 	return (0);
 }
