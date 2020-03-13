@@ -7,6 +7,8 @@
  *     */
 int main(void)
 {
-	print_all("ceis", 'H', 0, "lberton");
+	//print_all("ceis", 'H', 0, "lberton");
+	//print_all("eec", 'H', 0, "lberton");
+	print_all("ceiseeeeeeffics", 'H', 0, "lberton", 3.4, 2.0, -11, 'A', "lolo");
 	return (0);
 }
