@@ -1,45 +1,54 @@
-#ifndef VARIADIC_FUNCTIONS_H
-#define VARIADIC_FUNCTIONS_H
-
-#include <stdarg.h>
-
-int _putchar(char c);
-
-int sum_them_all(const unsigned int n, ...);
-
-void print_numbers(const char *separator, const unsigned int n, ...);
-
-void print_strings(const char *separator, const unsigned int n, ...);
-
-void print_all(const char * const format, ...);
-
-void (*get_op(char *format))(char *, va_list, int, int);
-
-struct cases
-{
-	char *format;
-	void (*f)(char *separator, va_list temp, int size, int contador_space);
-};
-typedef struct cases switc_h;
+#include "variadic_functions.h"
 
 
-void print_c(char *separator, va_list temp, int size, int contador_space);
-int _str_len(const char *const format);
-
-void print_i(char *separator, va_list temp, int size, int contador_space);
-
-void print_f(char *separator, va_list temp, int size, int contador_space);
-
-void print_s(char *separator, va_list temp, int size, int contador_space);
 /**
- *  *_str_len - length of a string
- *   *@format: format of a string
- *    *Return: the length of a string
- *     */
+ *print_all - print_all the characters
+ *@format: print the format of the char
+ *Return: return the printed value
+ */
+
+void print_all(const char * const format, ...)
+{
+	int i;
+	va_list args;
+	char buffer[2];
+	void (*f)(char *separator, va_list temp, int size, int contador_space);
+
+	va_start(args, format);
+
+	i = 0;
+
+	if (format == NULL)
+	{
+		printf("(nil)\n");
+		return;
+	}
+
+	while (i < _str_len(format))
+	{
+		buffer[0] = format[i];
+		buffer[1] = '\0';
+
+		f = get_op(buffer);
+		if (f != NULL)
+		{
+			f(", ", args, _str_len(format), i); /* imprimira algo */
+		}
+		i++;
+	}
+	printf("\n");
+	va_end(args);
+}
+/**
+ *_str_len - length of a string
+ *@format: format of a string
+ *Return: the length of a string
+ */
 
 int _str_len(const char *const format)
 {
 	int i;
+
 	for (i = 0; format[i] != '\0'; i++)
 	{
 
@@ -49,13 +58,13 @@ int _str_len(const char *const format)
 }
 
 /**
- *  *print_c - print_c a character
- *   *@separator: separatarot for characters
- *    *@temp: va_list
- *     *@size:number of formats
- *      *@contador_space: number of the iteration
- *       *Return: return the string
- *        */
+ * print_c - print_c a character
+ *  @separator: separatarot for characters
+ *  @temp: va_list
+ *     @size:number of formats
+ *      @contador_space: number of the iteration
+ *  Return: return the string
+ */
 
 void print_c(char *separator, va_list temp, int size, int contador_space)
 {
@@ -78,13 +87,13 @@ void print_c(char *separator, va_list temp, int size, int contador_space)
 
 
 /**
- *  *print_i - print_c a character
- *   *@separator: separatarot for characters
- *    *@temp: va_list
- *     *@size:number of formats
- *      *@contador_space: number of the iteration
- *       *Return: return the string
- *        */
+ *print_i - print_c a character
+ *@separator: separatarot for characters
+ *@temp: va_list *     *@size:number of formats
+ *@size: ss
+ *@contador_space: number of the iteration
+ *Return: return the string
+ */
 
 void print_i(char *separator, va_list temp, int size, int contador_space)
 {
@@ -102,13 +111,13 @@ void print_i(char *separator, va_list temp, int size, int contador_space)
 }
 
 /**
- *  *print_f - print_c a character
- *   *@separator: separatarot for characters
- *    *@temp: va_list
- *     *@size:number of formats
- *      *@contador_space: number of the iteration
- *       *Return: return the string
- *        */
+ *print_f - print_c a character
+ *@separator: separatarot for characters
+ *@temp: va_list
+ *@size:number of formats
+ *@contador_space: number of the iteration
+ *Return: return the string
+ */
 
 void print_f(char *separator, va_list temp, int size, int contador_space)
 {
@@ -127,13 +136,14 @@ void print_f(char *separator, va_list temp, int size, int contador_space)
 
 
 /**
- *  *print_s - print_c a character
- *   *@separator: separatarot for characters
- *    *@temp: va_list
- *     *@size:number of formats
- *      *@contador_space: number of the iteration
- *       *Return: return the string
- *        */
+ *print_s - print_c a character
+ *@separator: separatarot for characters
+ *@temp: va_list
+ *@size:number of formats
+ *@contador_space: number of the iteration
+ *Return: return the string
+ */
+
 void print_s(char *separator, va_list temp, int size, int contador_space)
 {
 	if (contador_space == size - 1)
@@ -152,10 +162,10 @@ void print_s(char *separator, va_list temp, int size, int contador_space)
 
 
 /**
- *  *get_op - print_c a character
- *   *@format: format for the string
- *    *Return: return the string
- *     */
+ * get_op - print_c a character
+ * @format: format for the string
+ * Return: return the string
+ */
 
 void (*get_op(char *format))(char *, va_list, int, int)
 {
@@ -169,6 +179,7 @@ void (*get_op(char *format))(char *, va_list, int, int)
 		{"i", print_i},
 		{"f", print_f},
 		{"s", print_s},
+
 		{NULL, NULL}
 
 	};
@@ -177,7 +188,9 @@ void (*get_op(char *format))(char *, va_list, int, int)
 	{
 		if (strcmp(format, possible_case[i].format) == 0)
 		{
+
 			return (possible_case[i].f);
+
 
 		}
 		i++;
@@ -185,6 +198,3 @@ void (*get_op(char *format))(char *, va_list, int, int)
 	return (possible_case[i].f);
 }
 
-
-
-#endif
