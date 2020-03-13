@@ -1,39 +1,17 @@
-section .data                           ;Data segment
-   userMsg db 'Hello, Holberton' ;Ask the user to enter a number
-   lenUserMsg: equ $-userMsg             ;The length of the message
-               
+section .data
+		text db "Hello, Holberton",10
 
-section .bss           ;Uninitialized data
-   num resb 5
-	
-section .text          ;Code Segment
-   global main
-	
-main:                ;User prompt
-   mov eax, 4
-   mov ebx, 1
-   mov ecx, userMsg
-   mov edx, lenUserMsg
-   int 80h
+section .text
+		global main
 
-   ;Read and store the user input
-   mov eax, 3
-   mov ebx, 2
-   mov ecx, num  
-   mov edx, 5          ;5 bytes (numeric, 1 for sign) of that information
-   int 80h
-	
-   ;Output the message 'The entered number is: '
+main:
+		mov rax, 1
+		mov rdi, 1
+		mov rsi, text
+		mov rdx, 17
+		syscall
 
+		mov rax, 60
+		mov rdi, 0
+		syscall
 
-   ;Output the number entered
-   mov eax, 4
-   mov ebx, 1
-   mov ecx, num
-   mov edx, 5
-   int 80h  
-    
-   ; Exit code
-   mov eax, 1
-   mov ebx, 0
-   int 80h

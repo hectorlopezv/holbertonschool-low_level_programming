@@ -9,14 +9,23 @@
 
 void print_all(const char * const format, ...)
 {
-	int i;
+	int i, j;
 	va_list args;
-	char buffer[2];
 	void (*f)(char *separator, va_list temp, int size, int contador_space);
 
-	va_start(args, format);
+	switc_h possible_case[] =
+	{
+		{"c", print_c},
+		{"i", print_i},
+		{"f", print_f},
+		{"s", print_s},
+
+		{NULL, NULL}
+
+	};
 
 	i = 0;
+	j = 0;
 
 	if (format == NULL)
 	{
@@ -24,12 +33,20 @@ void print_all(const char * const format, ...)
 		return;
 	}
 
-	while (i < _str_len(format))
-	{
-		buffer[0] = format[i];
-		buffer[1] = '\0';
+	va_start(args, format);
 
-		f = get_op(buffer);
+	while (format != NULL)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			if (strcmp(format, possible_case[i].format) == 0)
+			{
+				f = possible_case[i].f;
+			}
+
+			j++;
+		}
 		if (f != NULL)
 		{
 			f(", ", args, _str_len(format), i); /* imprimira algo */
@@ -39,23 +56,7 @@ void print_all(const char * const format, ...)
 	printf("\n");
 	va_end(args);
 }
-/**
- *_str_len - length of a string
- *@format: format of a string
- *Return: the length of a string
- */
 
-int _str_len(const char *const format)
-{
-	int i;
-
-	for (i = 0; format[i] != '\0'; i++)
-	{
-
-
-	}
-	return (i);
-}
 
 /**
  * print_c - print_c a character
@@ -157,44 +158,5 @@ void print_s(char *separator, va_list temp, int size, int contador_space)
 
 	}
 
-}
-
-
-
-/**
- * get_op - print_c a character
- * @format: format for the string
- * Return: return the string
- */
-
-void (*get_op(char *format))(char *, va_list, int, int)
-{
-	int i;
-
-	i = 0;
-	switc_h possible_case[] =
-
-	{
-		{"c", print_c},
-		{"i", print_i},
-		{"f", print_f},
-		{"s", print_s},
-
-		{NULL, NULL}
-
-	};
-
-	while (i < 4)
-	{
-		if (strcmp(format, possible_case[i].format) == 0)
-		{
-
-			return (possible_case[i].f);
-
-
-		}
-		i++;
-	}
-	return (possible_case[i].f);
 }
 
