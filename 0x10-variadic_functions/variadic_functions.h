@@ -30,10 +30,7 @@ struct cases
 
 typedef struct cases switc_h;
 
-
 void print_c(va_list temp);
-
-int _str_len(const char *const format);
 
 void print_i(va_list temp);
 
