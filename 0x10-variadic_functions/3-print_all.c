@@ -2,10 +2,7 @@
 
 /**
  *print_c - print_c a character
- *@separator: separatarot for characters
  *@temp: va_list
- *@size:number of formats
- *@contador_space: number of the iteration
  *Return: return the string
  */
 
@@ -18,10 +15,7 @@ void print_c(va_list temp)
 
 /**
  *print_i - print_c a character
- *@separator: separatarot for characters
  *@temp: va_list *     *@size:number of formats
- *@size: ss
- *@contador_space: number of the iteration
  *Return: return the string
  */
 
@@ -32,10 +26,7 @@ void print_i(va_list temp)
 
 /**
  *print_f - print_c a character
- *@separator: separatarot for characters
  *@temp: va_list
- *@size:number of formats
- *@contador_space: number of the iteration
  *Return: return the string
  */
 
@@ -48,10 +39,7 @@ void print_f(va_list temp)
 
 /**
  *print_s - print_c a character
- *@separator: separatarot for characters
  *@temp: va_list
- *@size:number of formats
- *@contador_space: number of the iteration
  *Return: return the string
  */
 
@@ -88,9 +76,9 @@ void print_all(const char * const format, ...)
 		buffer[0] = format[i];
 		buffer[1] = '\0';
 		f = get_op(buffer);
-		if (f !=NULL)
+		if (f != NULL)
 		{
-			printf("%s",space);
+			printf("%s", space);
 			f(args); /* imprimira algo */
 			space = ", ";
 

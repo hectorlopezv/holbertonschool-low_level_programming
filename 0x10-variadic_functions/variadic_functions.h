@@ -16,6 +16,12 @@ void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
 
+/**
+  *struct cases - struct
+  *@format: operatir
+  *@f: the func
+  */
+
 struct cases
 {
 	char *format;
