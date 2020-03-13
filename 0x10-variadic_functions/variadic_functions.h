@@ -33,4 +33,18 @@ void print_f(char *separator, va_list temp, int size, int contador_space);
 void print_s(char *separator, va_list temp, int size, int contador_space);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif

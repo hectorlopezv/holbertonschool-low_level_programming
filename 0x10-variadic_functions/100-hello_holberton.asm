@@ -1,6 +1,6 @@
 section .data                           ;Data segment
    userMsg db 'Hello, Holberton' ;Ask the user to enter a number
-   lenUserMsg equ $-userMsg             ;The length of the message
+   lenUserMsg: equ $-userMsg             ;The length of the message
                
 
 section .bss           ;Uninitialized data
@@ -9,7 +9,7 @@ section .bss           ;Uninitialized data
 section .text          ;Code Segment
    global main
 	
-    main:                ;User prompt
+main:                ;User prompt
    mov eax, 4
    mov ebx, 1
    mov ecx, userMsg
