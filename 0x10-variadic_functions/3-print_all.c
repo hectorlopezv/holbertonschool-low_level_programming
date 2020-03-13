@@ -1,88 +1,17 @@
 #include "variadic_functions.h"
 
-
 /**
- *print_all - print_all the characters
- *@format: print the format of the char
- *Return: return the printed value
+ *print_c - print_c a character
+ *@separator: separatarot for characters
+ *@temp: va_list
+ *@size:number of formats
+ *@contador_space: number of the iteration
+ *Return: return the string
  */
 
-void print_all(const char * const format, ...)
+void print_c(va_list temp)
 {
-	int i, j;
-	va_list args;
-	void (*f)(char *separator, va_list temp, int size, int contador_space);
-
-	switc_h possible_case[] =
-	{
-		{"c", print_c},
-		{"i", print_i},
-		{"f", print_f},
-		{"s", print_s},
-
-		{NULL, NULL}
-
-	};
-
-	i = 0;
-	j = 0;
-
-	if (format == NULL)
-	{
-		printf("(nil)\n");
-		return;
-	}
-
-	va_start(args, format);
-
-	while (format != NULL)
-	{
-		j = 0;
-		while (j < 4)
-		{
-			if (strcmp(format, possible_case[i].format) == 0)
-			{
-				f = possible_case[i].f;
-			}
-
-			j++;
-		}
-		if (f != NULL)
-		{
-			f(", ", args, _str_len(format), i); /* imprimira algo */
-		}
-		i++;
-	}
-	printf("\n");
-	va_end(args);
-}
-
-
-/**
- * print_c - print_c a character
- *  @separator: separatarot for characters
- *  @temp: va_list
- *     @size:number of formats
- *      @contador_space: number of the iteration
- *  Return: return the string
- */
-
-void print_c(char *separator, va_list temp, int size, int contador_space)
-{
-
-	if (contador_space == size - 1)
-	{
-		printf("%c", va_arg(temp, int));
-
-	}
-	else
-	{
-		printf("%c%s", va_arg(temp, int), separator);
-
-	}
-
-
-
+	printf("%c", va_arg(temp, int));
 
 }
 
@@ -96,19 +25,9 @@ void print_c(char *separator, va_list temp, int size, int contador_space)
  *Return: return the string
  */
 
-void print_i(char *separator, va_list temp, int size, int contador_space)
+void print_i(va_list temp)
 {
-	if (contador_space == size - 1)
-	{
-		printf("%d", va_arg(temp, int));
-
-	}
-	else
-	{
-		printf("%d%s", va_arg(temp, int), separator);
-
-	}
-
+	printf("%d", va_arg(temp, int));
 }
 
 /**
@@ -120,18 +39,9 @@ void print_i(char *separator, va_list temp, int size, int contador_space)
  *Return: return the string
  */
 
-void print_f(char *separator, va_list temp, int size, int contador_space)
+void print_f(va_list temp)
 {
-	if (contador_space == size - 1)
-	{
-		printf("%f", va_arg(temp, double));
-
-	}
-	else
-	{
-		printf("%f%s", va_arg(temp, double), separator);
-
-	}
+	printf("%f", va_arg(temp, double));
 
 }
 
@@ -145,18 +55,87 @@ void print_f(char *separator, va_list temp, int size, int contador_space)
  *Return: return the string
  */
 
-void print_s(char *separator, va_list temp, int size, int contador_space)
+void print_s(va_list temp)
 {
-	if (contador_space == size - 1)
+
+	printf("%s", va_arg(temp, char *));
+}
+
+
+
+
+/**
+ *print_all - print_all the characters
+ *@format: print the format of the char
+ *Return: return the printed value
+ */
+
+void print_all(const char * const format, ...)
+{
+	int i;
+	va_list args;
+	void (*f)(va_list temp);
+	char buffer[2];
+	char *space;
+
+	space = "";
+	i = 0;
+
+	va_start(args, format);
+
+	while (i < strlen(format))
 	{
-		printf("%s", va_arg(temp, char *));
+		buffer[0] = format[i];
+		buffer[1] = '\0';
+		f = get_op(buffer);
+		if (f !=NULL)
+		{
+			printf("%s",space);
+			f(args); /* imprimira algo */
+			space = ", ";
+
+		}
+		i++;
 
 	}
-	else
+
+
+	printf("\n");
+	va_end(args);
+}
+
+
+/**
+ *get_op - l
+ *@format: format
+ *Return: return
+ */
+
+void (*get_op(char *format))(va_list)
+{
+	int i;
+
+	i = 0;
+	switc_h possible_case[] =
+
 	{
-		printf("%s%s", va_arg(temp, char *), separator);
+		{"c", print_c},
+		{"i", print_i},
+		{"f", print_f},
+		{"s", print_s},
+		{NULL, NULL}
 
+	};
+
+	while (i < 4)
+	{
+		if (strcmp(format, possible_case[i].format) == 0)
+		{
+			return (possible_case[i].f);
+
+		}
+		i++;
 	}
-
+	return (possible_case[i].f);
 }
 
