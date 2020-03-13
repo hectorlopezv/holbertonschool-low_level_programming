@@ -18,6 +18,8 @@ void print_all(const char * const format, ...)
 	char buffer[2];
 	void (*f)(char *separator, va_list temp, int size, int contador_space);
 
+	va_start(args, format);
+
 	i = 0;
 
 	if (format == NULL)
@@ -26,12 +28,11 @@ void print_all(const char * const format, ...)
 		return;
 	}
 
-	va_start(args, format);
-
 	while (i < _str_len(format))
 	{
 		buffer[0] = format[i];
 		buffer[1] = '\0';
+
 		f = get_op(buffer);
 		if (f != NULL)
 		{
