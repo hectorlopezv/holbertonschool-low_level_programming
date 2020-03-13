@@ -61,15 +61,18 @@ void print_s(va_list temp)
 void print_all(const char * const format, ...)
 {
 	int i;
-	va_list args;
 	void (*f)(va_list temp);
 	char buffer[2];
 	char *space;
 
-	space = "";
-	i = 0;
+	va_list args;
 
 	va_start(args, format);
+
+	space = "";
+	i = 0;
+	buffer[0] = format[i];
+	buffer[1] = '\0';
 
 	while (i < strlen(format))
 	{
