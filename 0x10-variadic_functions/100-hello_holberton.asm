@@ -7,9 +7,9 @@ section .data                           ;Data segment
 	     num resb 5
 		 	
 		 section .text          ;Code Segment
-		    global _start
+		    global main
 				
-			_start:                ;User prompt
+			main:                ;User prompt
 			   mov eax, 4
 			      mov ebx, 1
 				     mov ecx, userMsg
@@ -19,20 +19,16 @@ section .data                           ;Data segment
 						      ;Read and store the user input
 							     mov eax, 3
 								    mov ebx, 2
-									   mov ecx, num  
+									   mov ecx, num
 									      mov edx, 5          ;5 bytes (numeric, 1 for sign) of that information
 										     int 80h
-											 	
 											    ;Output the message 'The entered number is: '
-
-
 												   ;Output the number entered
 												      mov eax, 4
 													     mov ebx, 1
 														    mov ecx, num
 															   mov edx, 5
-															      int 80h  
-																      
+															      int 80h
 																     ; Exit code
 																	    mov eax, 1
 																		   mov ebx, 0
