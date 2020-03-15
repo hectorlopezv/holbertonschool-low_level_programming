@@ -33,18 +33,23 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (temp);
 	}
 
-	for (; i <= idx - 1 && temp_it != NULL; i++)
+	for (; i <idx - 1 && temp_it != NULL; i++)
 	{
 		temp_it = temp_it->next;
 		printf("numero %d\n", i);
 	}
-	if (temp_it->next == NULL)
+	printf("hectorcito\n");
+	if (*head == temp || temp_it != NULL)
 	{
-		return(NULL);
+		temp->next = temp_it->next;
+		temp_it->next = temp;
 	}
 
-	temp->next = temp_it->next;
-	temp_it->next = temp;
+	if (temp_it == NULL)
+	{
+		printf("entro\n");
+		return (NULL);
+	}
 
 
 	return (temp);
