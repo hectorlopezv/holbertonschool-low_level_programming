@@ -23,17 +23,15 @@ int main(void)
 	add_nodeint_end(&head, 1024);
 	print_listint(head);
 	printf("-----------------\n");
-	//insert_nodeint_at_index(&head, 5, 4096);
+	insert_nodeint_at_index(&head, 5, 4096);
 
 	//insert_nodeint_at_index(&head, 0, 1234);
 
-	printf("%p\n",(void *)  insert_nodeint_at_index(&head,8, 5555));
+	//printf("%p\n",(void *)  insert_nodeint_at_index(&head,8, 5555));
 
 
 
 	print_listint(head);
-	printf("papa\n");
 	free_listint2(&head);
-	printf("bebe\n");
 	return (0);
 }
