@@ -13,7 +13,13 @@ listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *node_where_they_meet, *start_loop_node;
 
+	if (head == NULL)
+	{
+		return (NULL);
+	}
+
 	node_where_they_meet = checkforloop(head);
+
 	if (node_where_they_meet == NULL)
 	{
 		return (NULL);
