@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- *get_nodeint_at_index - get node at index n
+ *delete_nodeint_at_index - get node at index n
  *@head: is the head of the pointer
  *@index: index of the node to be returned
  *Return: return the node of n position
@@ -27,7 +27,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (1);
 	}
 
-	for (; i< index - 1; i++)
+	for (; i < index - 1; i++)
 	{
 		temp_it = temp_it->next;
 	}
