@@ -1,9 +1,10 @@
 #include "lists.h"
 
 /**
- *get_nodeint_at_index - get node at index n
+ *insert_nodeint_at_index - get node at index n
  *@head: is the head of the pointer
- *@index: index of the node to be returned
+ *@idx: index of the node to be returned
+ *@n: number
  *Return: return the node of n position
  */
 
