@@ -11,12 +11,12 @@ void print_binary(unsigned long int n)
 {
 	if (n == 1)
 	{
-		write(1, "1\n", 3);
+		_putchar('1');
 		return;
 	}
 	else if (n == 0)
 	{
-		write(1, "0\n", 3);
+		_putchar('1');
 		return;
 	}
 
