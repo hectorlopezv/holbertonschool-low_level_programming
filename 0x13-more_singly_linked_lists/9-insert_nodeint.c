@@ -33,7 +33,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (temp);
 	}
 
-	for (; i <idx - 1 && temp_it != NULL; i++)
+	for (; i <idx - 1  && temp_it != NULL; i++)
 	{
 		temp_it = temp_it->next;
 		printf("numero %d\n", i);
@@ -49,6 +49,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (temp_it == NULL)
 	{
 		printf("entro\n");
+		free(temp);
 		return (NULL);
 	}
 
