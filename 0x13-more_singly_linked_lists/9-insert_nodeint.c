@@ -41,6 +41,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	printf("hectorcito\n");
 	if (*head == temp || temp_it != NULL)
 	{
+		printf("Hermoso\n");
 		temp->next = temp_it->next;
 		temp_it->next = temp;
 	}

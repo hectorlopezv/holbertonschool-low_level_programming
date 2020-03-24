@@ -10,7 +10,7 @@
  *     */
 int main(void)
 {
-	listint_t *head;
+	listint_t *head,*head2;
 
 	head = NULL;
 	add_nodeint_end(&head, 0);
@@ -22,8 +22,8 @@ int main(void)
 	//	add_nodeint_end(&head, 402);
 	//	add_nodeint_end(&head, 1024);
 	print_listint(head);
-	reverse_listint(&head);
-	print_listint(head);
-	free_listint2(&head);
+	head2 = reverse_listint(&head);
+	print_listint(head2);
+	free_listint2(&head2);
 	return (0);
 }
