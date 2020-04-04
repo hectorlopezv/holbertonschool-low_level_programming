@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 			exit(99);
 		}
 	} while (n_bytes == 1024);
-	if (close(from) < 0)
+	if (close(from) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from);
 		exit(100);
