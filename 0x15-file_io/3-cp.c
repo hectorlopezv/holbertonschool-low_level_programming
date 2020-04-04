@@ -31,17 +31,19 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-
-	while ((n_bytes = read(from, c, 1024)) < 0)
-	{
+	do {/*read and write at least one time*/
+		n_bytes = read(from, c, 1024);
+		if (n_bytes < 0) /* there is no end line and no error*/
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
+			exit(98);
+		}
 		if (write(fto, c, n_bytes) < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(from);
-			close(fto);
 			exit(99);
 		}
-	}
+	} while (n_bytes == 1024);
 	if (close(from) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from);
