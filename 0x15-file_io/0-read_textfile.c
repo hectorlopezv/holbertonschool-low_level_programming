@@ -22,6 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (c == NULL)
 		return (0);
 	c_total = read(fd, c, letters);
+	close(fd);
 	if (c_total == 0 || c_total == -1)
 	{
 		return (0);
@@ -29,13 +30,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	c[c_total] = 0;/*move pointer c_total*/
 
 	c_total = write(1, c, c_total);
-	if (c_total == 0)
-	{
-		free(c);
-		close(fd);
-		return(0);
-	}
 	free(c);
-	close(fd);
 	return (c_total);
 }
