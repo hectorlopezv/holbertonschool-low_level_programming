@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 
 	while ((n_bytes = read(from, c, 1024)) < 0)
 	{
-		if (write(fto, c, n_bytes) == -1)
+		if (write(fto, c, n_bytes) < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(from);
@@ -42,12 +42,12 @@ int main(int argc, char **argv)
 			exit(99);
 		}
 	}
-	if (close(from) == -1)
+	if (close(from) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from);
 		exit(100);
 	}
-	if (close(fto) == -1)
+	if (close(fto) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fto);
 		exit(100);
