@@ -12,16 +12,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fd, c_total;
 	char *c;
 
-	c_total = 0;
-
-	if (filename == NULL || letters == 0)
+	if (filename == NULL)
 		return (0);
-
 	fd = open(filename, O_RDONLY);
 
 	if (fd == -1)
 		return (0);
-
 	c = malloc(sizeof(char) * letters);
 	if (c == NULL)
 		return (0);
@@ -30,13 +26,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-
-	c[c_total] = 0;
+	c[c_total] = 0;/*move pointer c_total*/
 
 	c_total = write(1, c, c_total);
+	if (c_total == 0)
+	{
+		free(c);
+		close(fd);
+		return(0);
+	}
 	free(c);
 	close(fd);
-
 	return (c_total);
-
 }
