@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		exit(99); }
 	do {/*read and write at least one time*/
 		n_bytes = read(from, c, 1024);
-		if (n_bytes == < 0) /* there is no end line and no error*/
+		if (n_bytes < 0) /* there is no end line and no error*/
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read to %s\n", argv[1]);
 			exit(98); }
