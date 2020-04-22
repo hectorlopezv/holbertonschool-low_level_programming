@@ -1,4 +1,10 @@
 #include "lists.h"
+/**
+ *add_dnodeint_end - add_node to the end
+ *@head: head of the link list
+ *@n: number to put in new node
+ *Return: return new node
+ */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *new_node, *temp_node;
