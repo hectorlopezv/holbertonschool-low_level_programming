@@ -1,63 +1,36 @@
 #include "search_algos.h"
 
 /**
- *print_array - print_array
- *@array: array
- *@left: left part
- *@right: right part
- *Return: Always EXIT_SUCCESS
+ * binary_search - performs binary search
+ * @array: the integer array
+ * @size: its size
+ * @value: value to search for
+ *
+ * Return: the index found or -1
  */
-
-void print_array(int *array, int left, int right)
-{
-	char comma_;
-
-
-	printf("Searching in array:");
-	for (; left < right; left++)
-	{
-		comma_ = (left < right - 1) ? ',' : 32;
-		printf(" %d%c", array[left], comma_);
-	}
-	printf("\n");
-}
-
-/**
- *binary_search - print_array
- *@array: array
- *@size: left part
- *@value: right part
- *Return: Always EXIT_SUCCESS
- */
-
 int binary_search(int *array, size_t size, int value)
 {
-	int left, right, mid;
+	size_t i = 0;
+	int *a = array;
 
-	if (array == NULL)
+	if (!array)
 		return (-1);
 
-	left = 0;
-	right = size - 1;
-
-	while (left <= right)
+	while (size)
 	{
-		mid = (left + right) / 2;
-		print_array(array, left, right + 1);
+		for (i = 0, printf("Searching in array: "); i < size; i++)
+			printf("%d%s", a[i], i + 1 == size ? "\n" : ", ");
 
-		if (array[mid] == value)
-		{
-			return (mid);
-		}
-		else if (value < array[mid])
-		{
-			right = mid - 1;
-		}
+		i = (size - 1) / 2;
+		if (a[i] == value)
+			return ((a - array) + i);
+		else if (a[i] > value)
+			size = i;
 		else
 		{
-			left = mid + 1;
+			a += (i + 1);
+			size -= (i + 1);
 		}
 	}
 	return (-1);
 }
-
